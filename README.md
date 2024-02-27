@@ -13,7 +13,7 @@ NEXT_IMAGE_DOMAIN=nextjs.ddev.site
 DRUPAL_REVALIDATE_SECRET=secret
 ##
 
-    ## Explantion
+## Explantion
     > components
     > pages
     > public 
@@ -27,7 +27,7 @@ DRUPAL_REVALIDATE_SECRET=secret
 4) ddev start
 5) ddev describe 
 6) open the  http://127.0.0.1:xxxxx
-    ## Explantion
+## Explantion
     > Drupal is the headless CMS 
     > Endpoints are formated as such
         > http://127.0.0.1:xxxxx/jsonapi/{object_endpoint}
