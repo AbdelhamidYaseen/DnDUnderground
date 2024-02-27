@@ -5,12 +5,14 @@
 2) npm i
 3) npm run dev
 4) create an .env.local containing the following
-=====================================================        
+
+##
 NEXT_PUBLIC_DRUPAL_BASE_URL=http://nextjs.ddev.site/
 NEXT_IMAGE_DOMAIN=nextjs.ddev.site
 
 DRUPAL_REVALIDATE_SECRET=secret
-=====================================================
+##
+
     ## Explantion
     > components
     > pages
