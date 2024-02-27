@@ -1,0 +1,239 @@
+$color-alpha: #b78846;
+
+
+.Table{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    
+}
+.TableHead{
+    display: flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.TableHeadRow{
+    display: flex;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.3rem;
+
+}
+.TableHeadRowTitle{
+    font-weight: 600;
+    font-size: 1.2em;
+    width: 11rem;
+    border-bottom: solid var(--shade) 3px;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    padding: 0.7rem;
+    max-width: 11rem;
+
+}
+.TableBody{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.TableRow{
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: blanchedalmond;
+    padding: 0.3rem;
+    border: 2px solid $color-alpha;
+    transform: translate3d(0%, -0%, 0);
+
+    &:before, &:after {
+        content: "•";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        color: $color-alpha;
+        border: 2px solid $color-alpha;
+        line-height: 12px;
+        top: 5px;
+        text-align: center;
+      }
+        &:before {
+          left: 5px;
+        }
+        &:after {
+          right: 5px;
+        }
+}
+.TableRow2{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+    border: 2px solid $color-alpha;
+    padding: 1rem;
+    width: 100%;
+    &:before, &:after {
+      content: "•";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      color: $color-alpha;
+      border: 2px solid $color-alpha;
+      line-height: 12px;
+      bottom: -2px;
+      text-align: center;
+    }
+    &:before {
+      left: -2px;
+    }
+    &:after {
+      right: -2px;
+    }
+  }
+.TableRowData{
+    width: 11.7rem;
+    max-width: 11.7rem;
+}
+.Search{
+    transition: ease-in-out 0.7s;
+    position: relative;
+    background-color: #e3d1a5;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    border-radius: 0px 0px 15px 15px;
+    height: 25rem;
+    border: solid $color-alpha;
+    border-top: 0;
+    min-height: fit-content;
+}
+.Classes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: ease-in-out 1.7s;
+    min-height: fit-content;
+}
+.ClassSearch{
+    transition: ease-in-out 0.7s;
+    margin: 0.4rem;
+    border-radius: 50%;
+    border: solid black 2px;
+    background-color: white;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    padding: 1rem;
+    box-sizing:initial;
+}
+.ClassSearch:hover{
+    cursor: pointer;
+}
+.ClassSelected{
+    background-color: #b78846;
+}
+.InputSearch{
+    flex-wrap: wrap;
+    display: flex   ;
+    width: 100%;
+    justify-content: space-evenly;
+    transition: ease-in-out 1s;
+    margin-top: 2.5rem;
+}
+.InputDiv{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    transition: opacity 0.7s ease, height 0.7s ease; /* Add transition properties */
+    opacity: 1; /* Initial opacity */
+    height: auto;
+    label{
+        padding-left: 0.2rem;
+        padding-bottom: 0.5rem;
+        font-size: 21px;
+        font-weight: 700;
+    }
+}
+
+.Search.SmallerSearch{
+    transition: ease-in-out 1s;
+    height: 1px;
+    padding: 0;
+}
+.Input{
+    transition: ease-in-out 1.7s;
+    padding: 0.4rem;
+    color: black;
+    width: 13rem;
+    border:solid black 3px;
+}
+.ClassDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+        font-size: 21px;
+        font-weight: 600;
+        color: black    ;
+    }
+}
+.CollapseButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    border: solid black 2px;
+    background-color: white;
+    transform: translateY(15px);
+    cursor: pointer;
+    transition: ease 1.5s;
+}
+.RotatedButton{
+    transform: rotate(180deg) translateY(-15px);
+    transition: ease-in-out 0.7s;
+    border: darkblue solid 2px;
+}
+
+.HiddenMenu {
+    transition: ease-in-out 1s;
+    opacity: 0; 
+    overflow: hidden;
+    *{
+        opacity: 0;
+        transition: ease-in-out 0.3s;
+    }
+}
+
+.SmallerSearch{
+    transition: ease-in-out 1s;
+    height: fit-content;
+    *{
+        margin: 0;
+    }
+    transition: border ease 2s;
+    border: 0;
+}

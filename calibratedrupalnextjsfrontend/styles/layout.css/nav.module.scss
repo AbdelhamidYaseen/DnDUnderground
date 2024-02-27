@@ -1,0 +1,55 @@
+.Navigation{
+    color: var(--text);
+    display: flex;
+    width: 60%;
+}
+.NavigationList{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: space-evenly;
+}
+.ListItem{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.Link{
+    font-size: 1.5em;
+    display: flex;
+    color:var(--text);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    transition: ease-in-out 0.8s;
+    border-radius: 7px 7px 7px 7px;
+    border-left: transparent;
+    border-right: transparent;
+}
+.Link:hover{
+    background-color: var(--shade);
+    
+}
+.ActiveLink{
+    font-size: 1.5em;
+    display: flex;
+    color:var(--text);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: var(--tint);
+    border-radius: 7px 7px 7px 7px;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    cursor:default;
+}

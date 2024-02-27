@@ -1,0 +1,112 @@
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuToggle {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: fixed; 
+    width: 55px !important; 
+    height: 55px !important; 
+    left: 9px;
+    right: 0;
+    bottom: 9px;
+    transition: ease-in-out 0.5s;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    opacity: 1;
+    color: white;
+    border: ridge black 5px;
+    *{
+        user-select: none;
+    }
+}
+.menuToggle::before{
+}
+.menuToggle:hover{
+    cursor: pointer;
+    background-color: var(--shade);
+}
+.menu{
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: fixed; 
+    width: 55px !important; 
+    height: fit-content !important; 
+    left: 9px;
+    right: 0;
+    bottom: 69px;
+    transition: ease-in-out 0.5s;
+    background-color: var(--secondary);
+    opacity: 1;
+    color: white;
+    border: ridge black 5px; 
+}
+.diceItem{
+    user-select: none;
+    width: 2rem;
+    margin: 0.2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: var(--shade);
+    text-align: center;
+}
+.diceItem:hover{
+    cursor: pointer;
+}
+.diceItemText{
+    visibility: hidden;
+    background-color: var(--secondary);
+    border: ridge black 5px; 
+    width: fit-content;
+    transform: translate(2.8rem, -1rem);
+}
+.diceItem:hover .diceItemText{
+    visibility: visible;
+}
+.TotalContainer{
+    user-select: none;
+    display: flex !important;
+    z-index: 100;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed; 
+    width: fit-content !important; 
+    height: 55px !important; 
+    left: 69px;
+    right: 0;
+    bottom: 9px;
+    transition: ease-in-out 0.5s;
+    opacity: 1;
+    color: white;
+    padding: 0.6rem;
+}
+.Total{
+    user-select: none;
+    background-color: var(--shade);
+    width: 155px;
+    border: ridge black 5px; 
+
+ 
+}
+.Roll{
+    user-select: none;
+    width: 4rem;
+    margin: 0.2rem;
+    height: 2rem;
+    text-align: center;
+    border: ridge black 5px; 
+    background-color: var(--shade);
+}
+.Roll:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\$entity of method Drupal\\\\graphql_compose_layout_paragraphs\\\\Plugin\\\\GraphQL\\\\DataProducer\\\\LayoutParagraphs\\:\\:resolve\\(\\) has invalid type Drupal\\\\paragraphs\\\\ParagraphInterface\\.$#"
+			count: 1
+			path: modules/graphql_compose_layout_paragraphs/src/Plugin/GraphQL/DataProducer/LayoutParagraphs.php
+
+		-
+			message: "#^Property Drupal\\\\graphql_compose\\\\Plugin\\\\GraphQLCompose\\\\FieldType\\\\AddressCountryItem\\:\\:\\$countryRepository has unknown class CommerceGuys\\\\Addressing\\\\Country\\\\CountryRepositoryInterface as its type\\.$#"
+			count: 1
+			path: src/Plugin/GraphQLCompose/FieldType/AddressCountryItem.php
+
+		-
+			message: "#^Property Drupal\\\\graphql_compose\\\\Plugin\\\\GraphQLCompose\\\\FieldType\\\\AddressItem\\:\\:\\$countryRepository has unknown class CommerceGuys\\\\Addressing\\\\Country\\\\CountryRepositoryInterface as its type\\.$#"
+			count: 1
+			path: src/Plugin/GraphQLCompose/FieldType/AddressItem.php
+
+		-
+			message: "#^Property Drupal\\\\graphql_compose\\\\Plugin\\\\GraphQLCompose\\\\FieldType\\\\ImageItem\\:\\:\\$sanitizer has unknown class enshrined\\\\svgSanitize\\\\Sanitizer as its type\\.$#"
+			count: 1
+			path: src/Plugin/GraphQLCompose/FieldType/ImageItem.php

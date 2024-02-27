@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  :root{  
+    --main:#181716;
+    --secondary:#2a2727;
+    --tone:#393433;
+    --shade:#453f3d;
+    --tint:#57504d;
+    --text:#F5F5F5;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    div.__next{
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+  }
+  body{
+    background-image: url("../public/images/OLD_PAPER_TEXTURE.jpg");
+    background-color: #f0ba78;
+  }
+  /**/
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--secondary);
+    border-left: solid 1px var(--tint);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  h1{
+    font-size: 42px;
+    font-weight: 600;
+  }
