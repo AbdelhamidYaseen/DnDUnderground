@@ -10,10 +10,11 @@ import { table } from "console";
 import { url } from "inspector";
 import Link from "next/link";
 
+//Interface for object received from DRUPAL GET
 interface IndexPageProps {
   nodes: DrupalNode[];
 }
-/**/  
+//Custom Component for 1 row of data
 interface SpellRowProps {
   level: string;
   name: string;
@@ -27,6 +28,7 @@ interface SpellRowProps {
 }
 
 const SpellRow = (props: SpellRowProps) => {
+  //Custom Function to return innter items of components and format them.
   const returnShorterComponents = (e:string) =>{
     let component : string = "";
     if(e){
@@ -55,8 +57,10 @@ const SpellRow = (props: SpellRowProps) => {
   );
 };
 
-  export default function IndexPage({ nodes }: IndexPageProps) {
-    const [sort, setSort] = useState("level");
+//Main Page
+export default function IndexPage({ nodes }: IndexPageProps) {
+  //UseState for filters & sorts  
+  const [sort, setSort] = useState("level");
     
     const [searchOpen, setSearchOpen] = useState(true);
     const [filterName, setFilterName] = useState<string>("");
@@ -103,6 +107,7 @@ const SpellRow = (props: SpellRowProps) => {
         }    
     }
 
+    //Url for filters
     const artficerUrl = "/images/spells/artificer.jpg"
     const bardrUrl = "/images/spells/bard.jpg"
     const clericrUrl = "/images/spells/cleric.jpg"
@@ -113,11 +118,13 @@ const SpellRow = (props: SpellRowProps) => {
     const warlockUrl = "/images/spells/warlock.jpg"
     const wizardUrl = "/images/spells/wizard.jpg"
 
+    //Filters out the unique values from casting_time & duration an makes a new array from them
     const uniqueValues = Array.from(new Set([
       ...nodes.map(node => node.field_casting_time),
       ...nodes.map(node => node.field_duration)
     ]));
 
+    //Sorts the local array (nodes) depending on the current useState
     nodes.sort((val1, val2) => {
       if (sort === "level") {
         return val1.field_level - val2.field_level;
@@ -130,19 +137,23 @@ const SpellRow = (props: SpellRowProps) => {
     return (
       <Layout>
         <Head>
+          {/*This contains specific data that needs to be added to the HEAD*/ }
           <title>The Spellbook</title>
           <meta
             name="description"
-            content="An overview ow all spells."
+            content="An overview of all spells."
           />
         </Head>
         <div style={{ padding: "1rem" }}>
+
+
           <div>
             <h1 className="mb-10 text-6xl font-black" style={{marginLeft:'7rem'}}>Spells</h1>
             <hr style={{border:"solid darkblue 2px",marginLeft:"auto",marginRight:"auto", width:"85%"}}/>
           </div>
           
           <div className={`${tableStyles.Search} ${searchOpen ? tableStyles.Search : tableStyles.SmallerSearch}`}>
+            
             <div className={`${tableStyles.Classes} ${searchOpen ? tableStyles.Classes : tableStyles.HiddenMenu}`}>
               <div className={tableStyles.ClassDiv}>
                 <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${artficerUrl})`,backgroundPosition:"center",filter : artificer ? "blur(0px)" : "blur(2px)",border : artificer ? "green 3px solid" : "black 2px solid"}} onClick={() => setArtificer(prevState => !prevState)}></div>
@@ -181,15 +192,18 @@ const SpellRow = (props: SpellRowProps) => {
                 <p>Wizard</p>
               </div>
             </div>
+
             <div className={`${tableStyles.InputSearch} ${searchOpen ? tableStyles.InputSearch : tableStyles.HiddenMenu}`}>
+            
             <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{ backgroundColor: allSpells ? 'lightblue' : 'white' }} onClick={() => 
               setAllSpellsInversion()
-              
               }>All Spells</div>
+              
               <div className={`${tableStyles.InputDiv} ${searchOpen ? tableStyles.InputDiv : tableStyles.HiddenMenu}`}>
                 <label htmlFor="">Spell Name</label>
                 <input type="search" className={tableStyles.Input} value={filterName} onChange={e=>setFilterName(e.target.value)}/>
               </div>
+              
               <div className={`${tableStyles.InputDiv} ${searchOpen ? tableStyles.InputDiv : tableStyles.HiddenMenu}`}>
                 <label htmlFor="">Spell Level</label>
                 <input type="search"  className={tableStyles.Input} value={filterLevel} onChange={e=>setFilterLevel(e.target.value)}/>
@@ -206,36 +220,17 @@ const SpellRow = (props: SpellRowProps) => {
                 </select>
               </div>
             </div>
+
             <div className={`${tableStyles.CollapseButton} ${searchOpen ? tableStyles.CollapseButton : tableStyles.RotatedButton}`} onClick={()=>setSearchOpen(!searchOpen)}>
               ^
             </div>
+
           </div>
+
           <div className={tableStyles.Table}>
-            <div className={tableStyles.TableHead}>
-              <div className={tableStyles.TableHeadRow}>
-                <div
-                  className={tableStyles.TableHeadRowTitle}
-                  onClick={() => setSort("level")}
-                  style={{cursor:"pointer"}}
-                >
-                  Level
-                </div>
-                <div
-                  className={tableStyles.TableHeadRowTitle}
-                  onClick={() => setSort("name")}
-                  style={{cursor:"pointer"}}
-                >
-                  Name
-                </div>
-                <div className={tableStyles.TableHeadRowTitle}>School</div>
-                <div className={tableStyles.TableHeadRowTitle}>Duration</div>
-                <div className={tableStyles.TableHeadRowTitle} style={{textAlign:"center"}}>Casting Time</div>
-                <div className={tableStyles.TableHeadRowTitle} style={{textAlign:"center"}}>Concentration</div>
-                <div className={tableStyles.TableHeadRowTitle} style={{textAlign:"center"}}>Ritual</div>
-                <div className={tableStyles.TableHeadRowTitle} style={{textAlign:"center"}}>Components</div>
-              </div>
-            </div>
+
             <ul className={tableStyles.TableBody}>
+
               {nodes.filter((e)=> {if(e.title.toUpperCase().includes(filterName.toUpperCase())){return true}}).filter((e)=> {if(e.field_level == filterLevel || filterLevel == ""){return true}})
                 .filter((e)=> {if(e.field_casting_time == filterTags || filterTags == "" ||e.field_duration == filterTags ){return true}})
                 .filter((e) => {
@@ -269,8 +264,11 @@ const SpellRow = (props: SpellRowProps) => {
                     components={node.field_components}
                     key={node.id} path={node.path.alias}                />
               ))}
+
             </ul>
+
           </div>
+          
         </div>
       </Layout>
     );

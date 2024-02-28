@@ -8,6 +8,7 @@
 
 ##
 NEXT_PUBLIC_DRUPAL_BASE_URL=http://nextjs.ddev.site/
+
 NEXT_IMAGE_DOMAIN=nextjs.ddev.site
 
 DRUPAL_REVALIDATE_SECRET=secret
@@ -15,11 +16,19 @@ DRUPAL_REVALIDATE_SECRET=secret
 
 ## Explantion
     > components
+        (custom components for use on a single or on multiple pages)
     > pages
+        (base structure of the project)
+            > folder === pagename
+                index.tsx === page
+                [...slug].tsx === dynamically generated page
+            every folder is 1 level down in the structure
     > public 
+        (general items that are publically available and locally saved)
     > styles
+        (styling of the pages, layout and components)
     > .env.local
-
+        (contains base values to run project)
 # Drupal
 1) open cmd
 2) cd Drupal

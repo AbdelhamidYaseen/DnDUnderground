@@ -2,6 +2,8 @@
     color: var(--text);
     display: flex;
     width: 60%;
+    height: 5rem;
+    overflow: visible;
 }
 .NavigationList{
     display: flex;
@@ -52,4 +54,31 @@
     border-left: solid black 1px;
     border-right: solid black 1px;
     cursor:default;
+}
+.ChildLinks{
+    position: absolute;
+    z-index: 999; /* Adjust as needed */
+    background-color: var(--secondary);
+    font-size: 1.2em;
+    color:var(--text);
+    text-decoration: none;
+    top: 99%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: ease-in-out 0.8s;
+    border-radius: 7px 7px 7px 7px;
+    border-left: transparent;
+    border-right: transparent;
+
+}
+.ChildLinksItem{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+
+}
+.ChildLinksItem:hover{
+    background-color: var(--shade);
 }

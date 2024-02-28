@@ -1,0 +1,6 @@
+name: DnDFetcher
+description: Fetches Data From the DnD api and creates nodes  
+package: CustomModules
+
+type: module
+core_version_requirement: ^10
