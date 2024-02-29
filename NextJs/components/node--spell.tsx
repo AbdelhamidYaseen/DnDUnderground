@@ -12,6 +12,7 @@ interface NodeSpellProps {
 }
 
 export function NodeSpell({ node, ...props }: NodeSpellProps) {
+  console.log(node.field_concentration)
   return (
     <article {...props} style={{padding:"3rem", paddingLeft:"5rem", paddingRight:"5rem"}}>
       <h1 className={spellStyles.Title} style={{textTransform:"capitalize"}}>{node.title}</h1>
@@ -58,19 +59,19 @@ export function NodeSpell({ node, ...props }: NodeSpellProps) {
 
               <div className={spellStyles.StatBlock}>
                 <div className={spellStyles.StatLabel}>
-                  School
+                  Concentration
                 </div>
                 <div className={spellStyles.StatValue}>
-                  {node.field_magic_school.name}
+                  {node.field_concentration === false ? "no" : "yes"}
                 </div>
               </div>
 
               <div className={spellStyles.StatBlock}>
               <div className={spellStyles.StatLabel}>
-                  Damage/Effect
+                  Ritual
                 </div>
                 <div className={spellStyles.StatValue}>
-                  {node.field_level}
+                  {node.field_ritual === false ? "no" : "yes"}
                 </div>
               </div>
 
