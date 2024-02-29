@@ -1,8 +1,0 @@
-uuid: aa9f5547-9bea-4712-9cb3-dbb455a683cc
-langcode: en
-status: true
-dependencies: {  }
-name: Skills
-vid: skills
-description: 'Each ability covers a broad range of capabilities, including skills that a character or a monster can be proficient in. '
-weight: 0
