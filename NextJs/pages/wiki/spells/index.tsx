@@ -6,8 +6,6 @@ import Head from "next/head";
 
 import tableStyles from "/styles/spells.css/spelltable.module.scss";
 import { useState } from "react";
-import { table } from "console";
-import { url } from "inspector";
 import Link from "next/link";
 
 //Interface for object received from DRUPAL GET
@@ -44,10 +42,10 @@ const SpellRow = (props: SpellRowProps) => {
       <p className={tableStyles.TableRowData}><Link href={`/wiki/spells${props.path}`}>{props.name}</Link></p>
       <p className={tableStyles.TableRowData}>{props.school}</p>
       <p className={tableStyles.TableRowData}>{props.duration}</p>
-      <p className={tableStyles.TableRowData} style={{textAlign:"center"}}>{props.castingTime}</p>
-      <p className={tableStyles.TableRowData} style={{textAlign:"center"}}>{props.concentration === false ? "no" : "yes"}</p>
-      <p className={tableStyles.TableRowData} style={{textAlign:"center"}}>{props.ritual  === false ? "no" : "yes"}</p>
-      <p className={tableStyles.TableRowData} style={{textAlign:"center"}}>
+      <p className={tableStyles.TableRowData} >{props.castingTime}</p>
+      <p className={tableStyles.TableRowData} >{props.concentration === false ? "no" : "yes"}</p>
+      <p className={tableStyles.TableRowData} >{props.ritual  === false ? "no" : "yes"}</p>
+      <p className={tableStyles.TableRowData} >
         {props.components.map((e) => (
           <>{returnShorterComponents(e.name)}</>
         ))}
@@ -229,6 +227,24 @@ export default function IndexPage({ nodes }: IndexPageProps) {
 
           <div className={tableStyles.Table}>
 
+              <ul className={tableStyles.TableHeadRow}>
+                    <li className={tableStyles.TableHeadRowTitle}
+                      onClick={e=>setSort("level")}
+                      style={{cursor:"pointer"}}
+                    >Level</li>
+                    <li className={tableStyles.TableHeadRowTitle}
+                      onClick={e=>setSort("name")}
+                      style={{cursor:"pointer"}}
+                    >Name</li>
+                    <li className={tableStyles.TableHeadRowTitle}>School</li>
+                    <li className={tableStyles.TableHeadRowTitle}>Casting Time</li>
+                    <li className={tableStyles.TableHeadRowTitle}
+                    >Duration</li>
+                    <li className={tableStyles.TableHeadRowTitle}>Concentration</li>
+                    <li className={tableStyles.TableHeadRowTitle}>Ritual</li>
+                    <li className={tableStyles.TableHeadRowTitle}>Components</li>
+              </ul>
+
             <ul className={tableStyles.TableBody}>
 
               {nodes.filter((e)=> {if(e.title.toUpperCase().includes(filterName.toUpperCase())){return true}}).filter((e)=> {if(e.field_level == filterLevel || filterLevel == ""){return true}})
@@ -284,7 +300,7 @@ export default function IndexPage({ nodes }: IndexPageProps) {
       {
         params: {
           "fields[node--spell]":
-            "title,path,uid,field_level,field_components,field_casting_time,field_duration,field_magic_school,field_ritual,field_concentration,field_magic_casters,alias",
+            "title,body,path,uid,field_level,field_components,field_casting_time,field_duration,field_magic_school,field_ritual,field_concentration,field_magic_casters,alias",
           include: "field_magic_school,field_components,field_magic_casters",
         },
       }

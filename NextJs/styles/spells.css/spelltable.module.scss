@@ -8,30 +8,30 @@ $color-alpha: #b78846;
     margin-top: 2rem;
     
 }
-.TableHead{
-    display: flex;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
-}
 .TableHeadRow{
-    display: flex;
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0.3rem;
+    display: flex;
 
 }
 .TableHeadRowTitle{
     font-weight: 600;
     font-size: 1.2em;
-    width: 11rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
     border-bottom: solid var(--shade) 3px;
     margin-bottom: 0.6rem;
     padding-bottom: 0.3rem;
     padding: 0.7rem;
-    max-width: 11rem;
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    transform: translate3d(0%, -0%, 0);
+    width: 75%;
+
 
 }
 .TableBody{
@@ -48,6 +48,7 @@ $color-alpha: #b78846;
     padding: 0.3rem;
     border: 2px solid $color-alpha;
     transform: translate3d(0%, -0%, 0);
+    width: 100%;
 
     &:before, &:after {
         content: "•";
@@ -69,13 +70,13 @@ $color-alpha: #b78846;
         }
 }
 .TableRow2{
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     border: 2px solid $color-alpha;
     padding: 1rem;
-    width: 100%;
     &:before, &:after {
       content: "•";
       position: absolute;
@@ -96,8 +97,7 @@ align-items: center;
     }
   }
 .TableRowData{
-    width: 11.7rem;
-    max-width: 11.7rem;
+    width: 70%;
 }
 .Search{
     transition: ease-in-out 0.7s;

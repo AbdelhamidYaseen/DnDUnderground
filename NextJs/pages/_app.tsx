@@ -20,27 +20,28 @@ const NavLinks : CustomLinkProps [] = [
   {href:"/wiki",name:"Wiki",childLinks:
     [
       {
-        href:"/artefacts",
+        href:"/wiki/artefacts",
         name:"Artefacts",
+        
       },
       {
-        href:"/classes",
+        href:"/wiki/classes",
         name:"Classes",
       },
       {
-        href:"/conditions",
+        href:"/wiki/conditions",
         name:"Conditions",
       },
       {
-        href:"/feats",
+        href:"/wiki/feats",
         name:"Feats",
       },
       {
-        href:"/monsters",
+        href:"/wiki/monsters",
         name:"Monsters",
       },
       {
-        href:"/spells",
+        href:"/wiki/spells",
         name:"Spells",
       }
     ]
@@ -71,7 +72,6 @@ interface CustomLinkProps{
 const CustomLink = (props: CustomLinkProps) =>{
   const router = useRouter();
   const currentRoute = router.pathname;
-  console.log(props.childLinks);
   const [showChildLinks, setShowChildLinks] = useState(false);
 
   const handleMouseEnter = () => {

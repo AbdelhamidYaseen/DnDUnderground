@@ -12,7 +12,7 @@ interface NodePageProps {
 }
 
 export default function NodePage({ node }: NodePageProps) {
-  console.log(node)
+  //console.log(node)
   return (
     <Layout>
       <Head>
@@ -37,7 +37,6 @@ export async function getStaticProps(
   const path = await drupal.translatePathFromContext(context)
 
   const type = path.jsonapi.resourceName
-  console.log(type);
   let params = {}
   if (type === "node--spell") {
     params = {
@@ -49,7 +48,11 @@ export async function getStaticProps(
     path,
     context,
     {
-      params,
+      params:{
+        "fields[node--spell]":
+        "title,body,path,uid,field_level,field_components,field_casting_time,field_duration,field_magic_school,field_ritual,field_concentration,field_magic_casters,alias,field_range",
+      include: "field_magic_school,field_components,field_magic_casters",
+  }
     }
   )
 

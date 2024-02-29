@@ -1,0 +1,331 @@
+$color-alpha: #b78846;
+
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+// Animate the size, outside
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+// Stack multiple shadows, one from the left, the other from the right
+.close:hover,
+.close:focus {
+  box-shadow: 
+    inset -3.5em 0 0 0 var(--hover),
+    inset 3.5em 0 0 0 var(--hover);  
+}
+
+// Size can also be negative; see how it's smaller than the element
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+// Animating from the bottom
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+// And from the left
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+// Multiple shadows, one on the outside, another on the inside
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 var(--hover),
+      inset 6em 3.5em 0 0 var(--hover);
+  }
+}
+
+//=== Set button colors
+// If you wonder why use Sass vars or CSS custom properties...
+  // Make a map with the class names and matching colors
+$colors: (
+  fill: #a972cb,
+  pulse: #ef6eae, 
+  close: #ff7f82, 
+  raise: black, 
+  up: #e4cb58, 
+  slide: #8fc866, 
+  offset: #19bc8b
+);
+
+// Sass variables compile to a static string; CSS variables are dynamic and inherited
+  // Loop through the map and set CSS custom properties using Sass variables
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+
+
+
+
+.Title{
+    font-size: 4em;
+}
+.LargeBreak{
+    border-color: var(--main);
+    border: solid 5px;
+    border-radius: 30%;
+}
+.SmallerBreak{
+    border-color: var(--main);
+    border: solid 3px;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    margin-left: 2rem;
+    width: 90%;
+}
+.Info{
+    width: 60%;
+}
+.Container{
+    background-color: white;
+    display: flex;
+    box-shadow: 3px 5px 5px black;}
+.SpellStats{
+    height: fit-content;
+    min-height: 20rem;
+    font-size: 2.1em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.SpellText{
+    height: fit-content;
+    padding: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: 10rem;
+    font-size: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.StatBlock{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    padding-left: 5rem;
+}
+.StatValue{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    border: unset 4px black;
+    background-color: var(--tint);
+    border-radius: 7px;
+    width: 17rem;
+    color: var(--text);
+    font-size: 0.7em;
+    font-weight: 650;
+    text-align: center;
+    box-shadow: black 3px 3px 3px 3px;
+
+}
+.StatLabel{
+    width: 17rem;
+    font-weight: 650;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ImgContainer{
+    margin-left: auto;
+    margin-right: 10rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    img{
+        background-color: black;
+        height: 25rem;
+        width: 25rem;
+        border-radius: 15px;
+        border:solid black 3px;
+        box-shadow: black 3px 3px 3px 3px;
+
+    }
+}
+.Tags{
+    font-size: 1.7em;
+    div{
+        padding-top: 1rem;
+        padding-left: 2rem;
+    
+        display: flex;
+        flex-wrap: wrap;
+        label{
+            margin-right: 2rem;
+        }
+    }
+}
+.Tag{
+    border: solid black 2px;
+    padding: 0.3rem;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    user-select: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    width: fit-content;
+    color: var(--color);
+    transition: 0.25s;
+    width: 10rem;
+    height: fit-content;
+    &:hover,
+    &:focus { 
+      border-color: var(--hover);
+      color: black;
+    }
+}
+.Tag:hover{
+}
+.TableRow{
+    display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: blanchedalmond;
+    padding: 0.3rem;
+    border: 2px solid $color-alpha;
+    transform: translate3d(0%, -0%, 0);
+    width: 100%;
+
+    &:before, &:after {
+        content: "•";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        color: $color-alpha;
+        border: 2px solid $color-alpha;
+        line-height: 12px;
+        top: 5px;
+        text-align: center;
+      }
+        &:before {
+          left: 5px;
+        }
+        &:after {
+          right: 5px;
+        }
+}
+.TableRow2{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid $color-alpha;
+    padding: 1rem;
+    &:before, &:after {
+      content: "•";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      color: $color-alpha;
+      border: 2px solid $color-alpha;
+      line-height: 12px;
+      bottom: -2px;
+      text-align: center;
+    }
+    &:before {
+      left: -2px;
+    }
+    &:after {
+      right: -2px;
+    }
+}
+.TagsContainer{
+    display: flex;
+}
+
+@media only screen and (max-width: 1200px) {
+    .Container {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+    .Info{
+        justify-content: center;
+        width: 100%;
+        *{
+            justify-content: center;
+        }
+    }
+    .ImgContainer{
+        padding: 0;
+        margin: 1rem;
+    }
+    .StatBlock{
+        justify-content: center;
+        padding: 0.7rem;
+    }
+    .SmallerBreak{
+        width: 100%;
+        margin-left: 0px;
+
+    }
+    .TagsContainer{
+        width: 70%;
+
+    }
+    .SpellText{
+        padding: 0px;
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        .Text{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+  }
+  @media only screen and (max-width: 720px) {
+    .Tags{
+        div{
+            flex-direction: column;
+        }
+        .Tag{
+            width: 10rem;
+        }
+    }
+    .TagsContainer{
+        flex-direction: column;
+
+    }
+}
+
