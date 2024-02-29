@@ -1,0 +1,21 @@
+uuid: f8a8983e-729f-4999-9494-4bfc6af9ba48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ritual
+    - node.type.spell
+id: node.spell.field_ritual
+field_name: field_ritual
+entity_type: node
+bundle: spell
+label: ritual
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'true'
+  off_label: 'false'
+field_type: boolean

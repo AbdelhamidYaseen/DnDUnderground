@@ -1,0 +1,8 @@
+uuid: aa997b43-3cbf-412e-b5e0-f7f9c1f25f38
+langcode: en
+status: true
+dependencies: {  }
+name: 'Weapon Types'
+vid: weapon_types
+description: 'Your class grants proficiency in certain weapons, reflecting both the class’s focus and the tools you are most likely to use. Wh'
+weight: 0

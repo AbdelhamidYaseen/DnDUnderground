@@ -111,7 +111,31 @@ const CustomLink = (props: CustomLinkProps) =>{
     </>
   )
 }
+const CustomLinkMobile = (props: CustomLinkProps)=>{
+  const router = useRouter();
+  const currentRoute = router.pathname;
+
+  return(
+    <>
+      {
+      props.childLinks
+      ?
+      <Link href={props.href} className={currentRoute === props.href ? navStyles.ActiveLinkMobile : navStyles.LinkMobile}>
+      {props.name}
+      </Link>
+      :
+      <>
+      <Link href={props.href} className={currentRoute === props.href ? navStyles.ActiveLinkMobile : navStyles.LinkMobile}>
+      {props.name}  
+      </Link>
+      </>
+      }
+
+    </>
+  )
+}
 const NavigationBar = () =>{
+  const [MobileNavigation, SetMobileNavigation] = useState<boolean>(false);
     return(
       <nav className={navStyles.Navigation}>
         <ul className={navStyles.NavigationList}>
@@ -121,9 +145,38 @@ const NavigationBar = () =>{
             </>
           ))}
         </ul>
+        <div className={navStyles.NavigationMobile}>
+          <span className={navStyles.MobileMenuButton} onClick={(e)=>SetMobileNavigation(!MobileNavigation)}>
+            {MobileNavigation ? <> &#10005; </> : <>&#9776;</>}
+          </span>
+          {
+            MobileNavigation
+            ?
+            <ul className={navStyles.NavigationListMobile}>
+            {
+            NavLinks.map((e)=>(
+              <>
+                <CustomLinkMobile href={e.href} name={e.name} childLinks={e.childLinks}/>
+              </>
+            ))
+            }
+
+            <div className={navStyles.SearchHolder}>
+              <form className={navStyles.Search}> 
+              <input type="search" className={navStyles.SearchContent} />
+              <button type="submit" className={navStyles.SearchButton}><FiSearch /></button>
+              </form>
+            </div>
+          </ul>
+            :
+            <></>
+          }
+
+        </div>
       </nav>
   )
 }
+
 const HeaderBar = () =>{
   return(
     <header className={headerStyles.Header}>

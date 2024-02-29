@@ -1,3 +1,6 @@
+
+
+/*#region ---Main Navigation---*/
 .Navigation{
     color: var(--text);
     display: flex;
@@ -81,4 +84,125 @@
 }
 .ChildLinksItem:hover{
     background-color: var(--shade);
+}
+/*#endregion ---Main Navigation---*/
+/*#region ---Mobile Navigation---*/
+.NavigationMobile{
+    display: none;
+    width: 100%;
+}
+.NavigationListMobile{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+    width: fit-content;
+    height: 100vh;
+    background-color: var(--tone);
+    font-size: 1.2em;
+    color:var(--text);
+    text-decoration: none;
+    top: 0%;
+    padding-top: 5rem;
+    align-items: center;
+    text-align: center;
+    transition: ease-in-out 0.8s;
+    border-radius: 0px 0px 7px 7px;
+    border-left: transparent;
+    border-right: transparent;
+
+
+}
+.ActiveLinkMobile{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid var(--tone) 3px;
+    color:var(--text);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: var(--tint);
+    cursor:default;
+
+}
+.LinkMobile{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid var(--shade) 3px;
+}
+.MobileMenuButton{
+    z-index: 101; /* Adjust as needed */
+    display: flex;
+    padding: 0.2rem;
+    margin-left: auto;
+    height: 100%;
+    width: 5rem;
+    font-size: 3em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.MobileMenuChildHolder{
+    width: 100%;
+    display: flex;
+}
+.MobileMenuButtonChild{
+
+}
+.SearchHolder{
+    margin-top: auto;
+    margin-bottom: 3rem;
+    display: flex;
+}
+.Search{
+    display: flex;
+    padding-left: 2rem;
+}
+.SearchContent{
+    width: 70%;
+    color: black;
+    padding: 0.3rem;
+}
+.SearchButton{
+    width: 20%;
+    color: black;
+    background-color: white;
+    border-left: var(--secondary) solid 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*#endregion ---Mobile Navigation*/
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .Navigation{
+        width: fit-content;
+        margin-left: auto;
+    }
+    .NavigationList{
+        display: none;
+    }
+    .NavigationMobile{
+        display: flex;
+        flex-direction: row-reverse;
+        
+    }
+    .NavigationListMobile{
+        display: flex;
+    }
 }
