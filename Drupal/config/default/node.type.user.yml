@@ -1,0 +1,17 @@
+uuid: 7d39b962-225c-4441-9012-b80c52787cd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: User
+type: user
+description: 'Here comes the text for the user. This includes: "image", "intro text", ect...'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,8 @@
+uuid: 21d19ca1-b982-4208-8042-cebfea03fb14
+langcode: en
+status: true
+dependencies: {  }
+name: 'Magic School'
+vid: magic_school
+description: 'A school of magic certain spells belong to.'
+weight: 0

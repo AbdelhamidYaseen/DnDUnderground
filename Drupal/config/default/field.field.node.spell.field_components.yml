@@ -1,0 +1,29 @@
+uuid: 1ee47131-d342-4f14-89a8-0c53778aa965
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components
+    - node.type.spell
+    - taxonomy.vocabulary.spell_components
+id: node.spell.field_components
+field_name: field_components
+entity_type: node
+bundle: spell
+label: Components
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      spell_components: spell_components
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,8 @@
+uuid: 92614c35-ed4d-4a97-bbbc-0662433e4bb1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Spell Components'
+vid: spell_components
+description: 'The components required for spell casting'
+weight: 0

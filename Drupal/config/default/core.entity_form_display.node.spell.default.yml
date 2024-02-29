@@ -1,0 +1,135 @@
+uuid: 1625873e-abb2-444c-a70f-02b4e1e9006d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.spell.body
+    - field.field.node.spell.field_casting_time
+    - field.field.node.spell.field_components
+    - field.field.node.spell.field_concentration
+    - field.field.node.spell.field_duration
+    - field.field.node.spell.field_level
+    - field.field.node.spell.field_magic_casters
+    - field.field.node.spell.field_magic_school
+    - field.field.node.spell.field_material_components
+    - field.field.node.spell.field_range
+    - field.field.node.spell.field_ritual
+    - field.field.node.spell.field_upcasting_effect
+    - node.type.spell
+  module:
+    - path
+    - text
+id: node.spell.default
+targetEntityType: node
+bundle: spell
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_casting_time:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_components:
+    type: options_buttons
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_concentration:
+    type: boolean_checkbox
+    weight: 36
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_duration:
+    type: string_textfield
+    weight: 35
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_level:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_magic_casters:
+    type: options_buttons
+    weight: 37
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_magic_school:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_material_components:
+    type: string_textarea
+    weight: 33
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_range:
+    type: string_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ritual:
+    type: boolean_checkbox
+    weight: 34
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_upcasting_effect:
+    type: string_textarea
+    weight: 32
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

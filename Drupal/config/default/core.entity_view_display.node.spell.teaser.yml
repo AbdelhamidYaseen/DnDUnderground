@@ -1,0 +1,52 @@
+uuid: 1c254a99-43eb-4305-8d73-27740dd27b97
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.spell.body
+    - field.field.node.spell.field_casting_time
+    - field.field.node.spell.field_components
+    - field.field.node.spell.field_concentration
+    - field.field.node.spell.field_duration
+    - field.field.node.spell.field_level
+    - field.field.node.spell.field_magic_casters
+    - field.field.node.spell.field_magic_school
+    - field.field.node.spell.field_material_components
+    - field.field.node.spell.field_range
+    - field.field.node.spell.field_ritual
+    - field.field.node.spell.field_upcasting_effect
+    - node.type.spell
+  module:
+    - text
+    - user
+id: node.spell.teaser
+targetEntityType: node
+bundle: spell
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_casting_time: true
+  field_components: true
+  field_concentration: true
+  field_duration: true
+  field_level: true
+  field_magic_casters: true
+  field_magic_school: true
+  field_material_components: true
+  field_range: true
+  field_ritual: true
+  field_upcasting_effect: true
