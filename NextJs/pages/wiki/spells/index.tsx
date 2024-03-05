@@ -240,7 +240,7 @@ export default function IndexPage({ nodes }: IndexPageProps) {
                     <li className={tableStyles.TableHeadRowTitle}>Casting Time</li>
                     <li className={tableStyles.TableHeadRowTitle}
                     >Duration</li>
-                    <li className={tableStyles.TableHeadRowTitle}>Concentration</li>
+                    <li className={tableStyles.TableHeadRowTitle} style={{}}>Concentration</li>
                     <li className={tableStyles.TableHeadRowTitle}>Ritual</li>
                     <li className={tableStyles.TableHeadRowTitle}>Components</li>
               </ul>

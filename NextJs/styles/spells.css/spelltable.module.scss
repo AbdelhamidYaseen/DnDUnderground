@@ -30,9 +30,9 @@ $color-alpha: #b78846;
     margin-bottom: 0.5rem;
     padding: 0.3rem;
     transform: translate3d(0%, -0%, 0);
-    width: 75%;
-
-
+    width: 100%;
+    justify-content: start;
+    align-items: center;
 }
 .TableBody{
     width: 75%;

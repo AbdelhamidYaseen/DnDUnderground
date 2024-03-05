@@ -114,21 +114,48 @@ const CustomLink = (props: CustomLinkProps) =>{
 const CustomLinkMobile = (props: CustomLinkProps)=>{
   const router = useRouter();
   const currentRoute = router.pathname;
+  const [showChildLinks, setShowChildLinks] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (props.childLinks) {
+      setShowChildLinks(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setShowChildLinks(false);
+  };
 
   return(
     <>
       {
       props.childLinks
       ?
-      <Link href={props.href} className={currentRoute === props.href ? navStyles.ActiveLinkMobile : navStyles.LinkMobile}>
-      {props.name}
-      </Link>
+      <li style={{width:"100%"}}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <Link href={props.href} className={currentRoute === props.href ? navStyles.ActiveLinkMobile : navStyles.LinkMobile}>
+        {props.name}
+        </Link>
+        {
+          showChildLinks && (
+            <ul className={navStyles.ChildLinksMobile}>
+              {props.childLinks.map(childLink => (
+                <li key={childLink.href} className={navStyles.ChildLinksItemMobile}>
+                  <Link href={childLink.href}>{childLink.name}</Link>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </li>
       :
-      <>
-      <Link href={props.href} className={currentRoute === props.href ? navStyles.ActiveLinkMobile : navStyles.LinkMobile}>
-      {props.name}  
-      </Link>
-      </>
+      <li style={{width:"100%"}}>
+        <Link href={props.href} className={currentRoute === props.href ? navStyles.ActiveLinkMobile : navStyles.LinkMobile}>
+        {props.name}  
+        </Link>
+      </li>
       }
 
     </>
