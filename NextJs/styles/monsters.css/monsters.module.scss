@@ -3,7 +3,6 @@ $highlightColor: #822000;
 .MonsterSheet{
     position: relative;
     height: fit-content;
-    width: fit-content;
     background-image: url("../../public/images/monsters/dndmonsterbackground.png");
     background-position: top center;
     background-repeat: no-repeat;
@@ -11,7 +10,9 @@ $highlightColor: #822000;
     box-shadow: 0 0 5px #979AA4;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 70rem;
 }
 .MonsterSheetTopBar{
     position: absolute;
@@ -37,7 +38,7 @@ $highlightColor: #822000;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     background-image: url("../../public/images/monsters/texture.png");
     background-size: 100% auto;
     background-position: top center;
@@ -47,7 +48,7 @@ $highlightColor: #822000;
 .Header{
     h2{
         color: $highlightColor;
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: 600;
         letter-spacing: 1px;
         
@@ -55,10 +56,75 @@ $highlightColor: #822000;
         text-transform: uppercase;
     }
     h3{
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 }
 .Seperator{
     padding-top: 0.8rem;
     padding-bottom: 0.4rem;
+    img{
+        height: 0.8rem;
+    }
+}
+.Stats{
+    .Stat{
+        .Label{
+            color: #822000;
+            font-weight: 680;
+            margin-right: 0.2rem;
+        }
+        .Data{
+            color: #822000;
+        }
+    }
+}
+.Attributes{
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: #822000;
+    .AttributeHolder{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .AttributeName{
+            font-weight: 640;
+        }
+        .AttributeValue{
+
+        }
+    }
+}
+.Label{
+    color: #822000;
+    font-weight: 680;
+    margin-right: 0.4rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+.Data{
+    color: #822000;
+    font-size: 0.9em;
+}
+.LabelSkill{
+    color: black;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1em;
+}
+.DataSkill{
+    display: inline;
+    margin-left: 0.3rem;
+    font-size: 0.99em;
+}
+.ActionTitle{
+    width: 100%;
+    font-size: 1.5em;
+    margin-top: 0.9rem;
+    border-bottom: solid #822000 1px;
+    color: #822000;
+    padding-bottom: 0.3rem;
 }

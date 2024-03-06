@@ -15,7 +15,7 @@ interface NodePageProps {
 
 export default function NodePage({ node }: NodePageProps) {
   console.log("-----------------------------------PRINT OUT-----------------------------------")
-  console.log( node.field_legendary_actions.map((item)=>(item)))
+  console.log( node.field_legendary_resistances.map((item)=>(item)))
   console.log("-------------------------------------------------------------------------------")
   return (
     <Layout>
