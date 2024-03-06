@@ -1,8 +1,64 @@
+$highlightColor: #822000;
+
 .MonsterSheet{
-    height: 50vh;
-    width: 50vh;
+    position: relative;
+    height: fit-content;
+    width: fit-content;
     background-image: url("../../public/images/monsters/dndmonsterbackground.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 5px #979AA4;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10rem;
+}
+.MonsterSheetTopBar{
+    position: absolute;
+    top:0;
+    min-width: 100%;
+    min-height: 0.5rem;
+    background-image: url("../../public/images/monsters/monsterborder.png");
+    border: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.MonsterSheetBottomBar{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 0.5rem;
+    background-image: url("../../public/images/monsters/monsterborder.png");
+}
+.MonsterSheetContent{
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-image: url("../../public/images/monsters/texture.png");
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.Header{
+    h2{
+        color: $highlightColor;
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 1px;
+        
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+    h3{
+        font-size: 0.7em;
+    }
+}
+.Seperator{
+    padding-top: 0.8rem;
+    padding-bottom: 0.4rem;
 }
