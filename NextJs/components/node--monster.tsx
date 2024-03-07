@@ -87,10 +87,11 @@ interface NodeMonsterProps {
     resistances:string[],
     weaknesses:string[],
     immunities:string[],
+
+    image:string,
 }
   
-  export function NodeMonster( props : NodeMonsterProps) {
-    console.log(props.legendaryactions[0].legendary);
+ export function NodeMonster( props : NodeMonsterProps) {
     function calculateAttributeModifier(attributeValue: number): string {
         const modifier = Math.floor((attributeValue - 10) / 2);
         return modifier >= 0 ? `+${modifier}` : `${modifier}`;
@@ -122,7 +123,7 @@ interface NodeMonsterProps {
                         </div>
                         <div className={monsterStyles.Stat}>
                             <span className={monsterStyles.Label}>Speed</span>
-                            <span className={monsterStyles.Data}> TODO refactor speed data</span>
+                            <span className={monsterStyles.DataSpeed}>{props.speed.map((e)=>(<div className={monsterStyles.SpeedItem} key={e.name}>{e.name} {e.amount} ft.</div>))}</span>
                         </div>
                     </div>
                     <div className={monsterStyles.Seperator}>
@@ -182,40 +183,40 @@ interface NodeMonsterProps {
                         <img src="https://www.dndbeyond.com/file-attachments/0/579/stat-block-header-bar.svg" alt="" />
                     </div>
                     <div className={monsterStyles.Skills}>
-                        <div >
+                        <div className={monsterStyles.SavingThrows}>
                             <span className={monsterStyles.Label}>Saving Throws</span>
                             {
                                 props.savingthrows.str  !== 0 &&(
-                                    <span className={monsterStyles.Data}>STR {calculateAttributeModifier(props.attributes.str)}</span>
+                                    <span className={monsterStyles.Data}>STR{calculateAttributeModifier(props.attributes.str)}</span>
                                 )
                             }
                             {
                                 props.savingthrows.dex  !== 0 &&(
-                                    <span className={monsterStyles.Data}>DEX {calculateAttributeModifier(props.attributes.dex)}</span>
+                                    <span className={monsterStyles.Data}>DEX{calculateAttributeModifier(props.attributes.dex)}</span>
                                 )
                             }
                             {
                                 props.savingthrows.con  !== 0 &&(
-                                    <span className={monsterStyles.Data}>CON {calculateAttributeModifier(props.attributes.con)}</span>
+                                    <span className={monsterStyles.Data}>CON{calculateAttributeModifier(props.attributes.con)}</span>
                                 )
                             }
                             {
                                 props.savingthrows.int  !== 0 &&(
-                                    <span className={monsterStyles.Data}>INT {calculateAttributeModifier(props.attributes.int)}</span>
+                                    <span className={monsterStyles.Data}>INT{calculateAttributeModifier(props.attributes.int)}</span>
                                 )
                             }
                             {
                                 props.savingthrows.wis  !== 0 &&(
-                                    <span className={monsterStyles.Data}>WIS {calculateAttributeModifier(props.attributes.wis)}</span>
+                                    <span className={monsterStyles.Data}>WIS{calculateAttributeModifier(props.attributes.wis)}</span>
                                 )
                             }
                             {
                                 props.savingthrows.cha  !== 0 &&(
-                                    <span className={monsterStyles.Data}>CHA {calculateAttributeModifier(props.attributes.cha)}</span>
+                                    <span className={monsterStyles.Data}>CHA{calculateAttributeModifier(props.attributes.cha)}</span>
                                 )
                             }
                         </div>
-                        <div>
+                        <div className={monsterStyles.InnerSkills}>
                         <span className={monsterStyles.Label}>Skills</span>
                             {
                                 props.skills.athletics  !== 0 &&(
@@ -320,7 +321,7 @@ interface NodeMonsterProps {
                                 <span className={monsterStyles.Data}>+{props.proficiencybonus}</span>
                             </div>
                             </div>
-                        </div>
+                    </div>
                     <div className={monsterStyles.Seperator}>
                         <img src="https://www.dndbeyond.com/file-attachments/0/579/stat-block-header-bar.svg" alt="" />
                     </div>
@@ -380,7 +381,8 @@ interface NodeMonsterProps {
                 </div>
                 <div className={monsterStyles.MonsterSheetBottomBar}></div>
             </div>
-            <div className={monsterStyles.MonsterImage}>
+            <div className={`${monsterStyles.MonsterImage} ${monsterStyles.MonsterImageContainer}`}>
+                <img src={`https://nextjs.ddev.site/${props.image}`} alt="" className={monsterStyles.MonsterImage}/>
             </div>
         </div>
     )

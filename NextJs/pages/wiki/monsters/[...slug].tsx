@@ -14,9 +14,11 @@ interface NodePageProps {
 }
 
 export default function NodePage({ node }: NodePageProps) {
-  console.log("-----------------------------------PRINT OUT-----------------------------------")
-  console.log( node.field_legendary_resistances.map((item)=>(item)))
-  console.log("-------------------------------------------------------------------------------")
+  //console.log("                                   ___________                                   ")
+  //console.log("-----------------------------------|PRINT OUT|-----------------------------------")
+  //console.log("                                   ¯¯¯¯¯¯¯¯¯¯¯                                   ")
+  //console.log(node.field_monster_base_values.field_drawing)
+  //console.log("-------------------------------------------------------------------------------")
   return (
     <Layout>
       <Head>
@@ -30,7 +32,6 @@ export default function NodePage({ node }: NodePageProps) {
         aligment={node.field_monster_base_values.field_aligment.name}
         proficiencybonus={node.field_monster_base_values.field_proficiency_bonus}
         armorclass={node.field_monster_base_values.field_armor_class} hitpoints={node.field_monster_base_values.field_hit_points}
-        speed={[node.field_movement.field_flight, node.field_movement.field_swim, node.field_movement.field_walk]}
         attributes={{
           str: node.field_attributes.field_strength,
           dex: node.field_attributes.field_dexterity,
@@ -92,20 +93,23 @@ export default function NodePage({ node }: NodePageProps) {
           damagedice: action.field_damage_dice,
           damagebonus: action.field_damage_bonus
         }))]}
+        speed={[...node.field_movement.field_movement.map((e) => ({
+          name: e.field_movement_name,
+          amount: e.field_movement_amount
+        }))]}
 
 
 
-
-        legendaryactions={node.field_legendary_actions.map(item=>(
+        legendaryactions={node.field_legendary_actions.map(item => (
           {
             text: item.field_legendary_text,
-            legendary: [...item.field_legendary_actions.map((unit)=>({name: unit.field_legendary_name, description: unit.field_legendary_description}))]
-          } 
+            legendary: [...item.field_legendary_actions.map((unit) => ({ name: unit.field_legendary_name, description: unit.field_legendary_description }))]
+          }
         ))}
 
         legendaryresistances={node.field_legendary_resistances.map(action => ({
           text: action.field_legendary_text,
-          legendary: [...action.field_legendary_actions.map((unit)=>({name: unit.field_legendary_name, description: unit.field_legendary_description}))]
+          legendary: [...action.field_legendary_actions.map((unit) => ({ name: unit.field_legendary_name, description: unit.field_legendary_description }))]
         }))}
 
 
@@ -117,8 +121,11 @@ export default function NodePage({ node }: NodePageProps) {
         }))]}
         resistances={[...node.field_vulnerabilites.map((e) => (e.field_resistances.map((f) => (f.name))))]}
         weaknesses={[...node.field_vulnerabilites.map((e) => (e.field_vulnerabilities.map((f) => (f.name))))]}
-        immunities={[...node.field_vulnerabilites.map((e) => (e.field_immunities.map((f) => (f.name))))]} 
-        hitdice={node.field_monster_base_values.field_hitdice}       />
+        immunities={[...node.field_vulnerabilites.map((e) => (e.field_immunities.map((f) => (f.name))))]}
+        hitdice={node.field_monster_base_values.field_hitdice} 
+        
+        image={node.field_monster_base_values.field_drawing.uri.url} 
+        />
     </Layout>
   )
 }
@@ -151,7 +158,7 @@ export async function getStaticProps(
             "fields[node--monster]":
             "title,body,path,uid,field_actions,field_attributes,body,field_legendary_actions,field_monster_base_values,field_movement,field_skills,field_special_abilities,field_vulnerabilites,field_saving_throws,field_legendary_resistances,field_reactions,field_bonus_actions",
             include: 
-            "field_actions,field_attributes,field_legendary_actions,field_movement,field_skills,field_special_abilities,field_vulnerabilites,field_monster_base_values,field_monster_base_values.field_languages,field_monster_base_values.field_senses,field_monster_base_values.field_aligment,field_monster_base_values.field_size,field_monster_base_values.field_type,field_saving_throws,field_reactions,field_bonus_actions,field_legendary_resistances,field_vulnerabilites.field_resistances,field_vulnerabilites,field_vulnerabilites.field_vulnerabilities,field_legendary_actions.field_legendary_actions",
+            "field_actions,field_attributes,field_legendary_actions,field_movement,field_skills,field_special_abilities,field_vulnerabilites,field_monster_base_values,field_monster_base_values.field_drawing,field_monster_base_values.field_languages,field_monster_base_values.field_senses,field_monster_base_values.field_aligment,field_monster_base_values.field_size,field_monster_base_values.field_type,field_saving_throws,field_reactions,field_bonus_actions,field_legendary_resistances,field_vulnerabilites.field_resistances,field_vulnerabilites,field_vulnerabilites.field_vulnerabilities,field_legendary_actions.field_legendary_actions,field_movement.field_movement",
           }
     }
   )

@@ -1,5 +1,13 @@
 $highlightColor: #822000;
-
+.Container{
+    display: flex;
+}
+.MonsterImage{
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    box-shadow: 0 0 5px #979AA4;
+}
 .MonsterSheet{
     position: relative;
     height: fit-content;
@@ -12,7 +20,8 @@ $highlightColor: #822000;
     margin-right: auto;
     margin-top: 5rem;
     margin-bottom: 5rem;
-    width: 70rem;
+    width: 50vw;
+    font-family: verdana, geneva, sans-serif;
 }
 .MonsterSheetTopBar{
     position: absolute;
@@ -53,7 +62,6 @@ $highlightColor: #822000;
         letter-spacing: 1px;
         
         line-height: 1.1;
-        text-transform: uppercase;
     }
     h3{
         font-size: 0.8em;
@@ -77,6 +85,13 @@ $highlightColor: #822000;
             color: #822000;
         }
     }
+}
+.SpellTitle{
+    width: 100%;
+    font-size: 1.5em;
+    color: #822000;
+    padding-bottom: 0.3rem;
+
 }
 .Attributes{
     padding-top: 0.8rem;
@@ -105,6 +120,27 @@ $highlightColor: #822000;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
 }
+.SavingThrows{
+    .Data{
+        padding: 3px;
+        margin-right: 5px;
+    }
+}
+.DataSpeed{
+    color: #822000;
+    font-size: 0.9em;
+    display: inline;
+    .SpeedItem{
+        display: inline;
+        margin-right: 9px;
+    }
+}
+.InnerSkills{
+    .Data{
+        padding: 3px;
+        margin-right: 5px;
+    } 
+}
 .Data{
     color: #822000;
     font-size: 0.9em;
@@ -128,3 +164,52 @@ $highlightColor: #822000;
     color: #822000;
     padding-bottom: 0.3rem;
 }
+@media only screen and (min-width: 1900px) {
+    .MonsterSheet{
+        width: 70rem;
+    }
+}
+@media only screen and (max-width: 1800px) {
+    .Container{
+        flex-direction: column-reverse;
+        .MonsterImage{
+            margin-left: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .MonsterSheet{
+        width: 60vw;
+        margin-top: 1rem;
+    }
+    .MonsterImage{
+        width: 45vw;
+        height: 45vw;
+
+    }
+    .MonsterImageContainer{
+        margin-top: 3rem;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .MonsterSheet{
+        width: 70vw;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .MonsterSheet{
+        width: 90vw;
+    }
+    .Attributes{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 25px));
+        gap: 10px;
+        justify-content: center;
+    }
+    .AttributeHolder{
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+

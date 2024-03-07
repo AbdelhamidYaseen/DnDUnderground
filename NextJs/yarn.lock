@@ -771,6 +771,13 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+drupal-jsonapi-params@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.npmjs.org/drupal-jsonapi-params/-/drupal-jsonapi-params-2.3.1.tgz"
+  integrity sha512-Isx6dudrFhORCl87OWHHO2LpQIAha5d6n7+/fwngsgcQs4PYeZcmTAA3pKUmvfyyFgCJ0N4fLAJQHyf4jtgiDA==
+  dependencies:
+    qs "^6.10.3"
+
 eastasianwidth@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz"

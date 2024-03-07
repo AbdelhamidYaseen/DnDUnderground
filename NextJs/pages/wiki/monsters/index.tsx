@@ -1,17 +1,18 @@
 import { Layout } from "components/layout";
+import { MonsterTable } from "components/node--monstertable";
 import { drupal } from "lib/drupal";
 import { GetStaticPathsContext, GetStaticPropsResult } from "next";
 import { DrupalNode, DrupalView } from "next-drupal";
 import Head from "next/head";
+import { DrupalJsonApiParams } from "drupal-jsonapi-params"
 import path from "path";
 
 interface IndexPageProps {
     nodes: DrupalNode[]
-  }
+}
   
 
 export default function Page ({nodes}:IndexPageProps){
-  console.log(nodes)
     return(
         <Layout>
             <Head>
@@ -27,23 +28,22 @@ export default function Page ({nodes}:IndexPageProps){
                     <hr style={{border:"solid darkblue 2px",marginLeft:"auto",marginRight:"auto", width:"85%"}}/>
                 </div>        
                 <div style={{paddingTop:"5rem",marginLeft:"auto",marginRight:"auto", width:"85%"}}>
-                {
-                    nodes.map((e)=>(
-                        <div style={{display:"flex"}} key={e.title}>
-                            <p>{e.field_challenge_rating}</p>
-                            <p>{e.title}</p>
-                            <div>
-                              <h2>Attributes</h2>
-                              <p>{e.field_attributes.field_strength}</p>
-                              <p>{e.field_attributes.field_dexterity}</p>
-                              <p>{e.field_attributes.field_constitution}</p>
-                              <p>{e.field_attributes.field_intelligence}</p>
-                              <p>{e.field_attributes.field_wisdom}</p>
-                              <p>{e.field_attributes.field_charisma}</p>
-                            </div>
-                        </div>
-                    ))
-                }  
+
+
+                <MonsterTable data={[...nodes.map((e)=>({
+                  data:{
+                    cr: e.field_monster_base_values.field_challenge_rating,
+                    name: e.title,
+                    type: e.field_monster_base_values.field_type.name,
+                    size: e.field_monster_base_values.field_size.name,
+                    alignment: e.field_monster_base_values.field_aligment.name,
+                    path: e.path.alias
+                  }
+
+                }
+                ))]}/>
+
+
                 </div>  
             </div>
         </Layout>
@@ -55,18 +55,17 @@ export async function getStaticProps(
     context
   ): Promise<GetStaticPropsResult<IndexPageProps>> {
 
+    const params = new DrupalJsonApiParams()
+    .addFields("node--monster", ["title","body","path","uid","field_monster_base_values"])
+    .addInclude(["node_type", "revision_uid", "uid,field_monster_base_values.field_aligment", "field_monster_base_values.field_size", "field_monster_base_values.field_aligment", "field_monster_base_values.field_type"]);
+
     const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
       "node--monster",
       context,
       {
-        params: {
-          "fields[node--monster]":
-          "title,body,path,uid,field_actions,field_attributes,body,field_legendary_actions,field_monster_base_values,field_movement,field_skills,field_special_abilities,field_vulnerabilites",
-          include: "node_type, revision_uid, uid, menu_link, field_actions, field_attributes, field_legendary_actions, field_monster_base_values, field_movement, field_skills, field_special_abilities, field_vulnerabilites",
-        },
+        params: params.getQueryObject()
       }
     );
-      console.log(nodes);
     return {
       props: {
         nodes,

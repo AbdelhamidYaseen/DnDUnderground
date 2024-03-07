@@ -1,0 +1,67 @@
+.Container{
+}
+.TableHead{
+    padding: 2.5rem;
+    padding-left: 3.9rem;
+    display: flex;
+    font-weight: 700;
+    font-size: 1.4em; 
+    background-image: url("../../public/images/monsters/row.png"); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+.TableHeadItem{
+    width: 20%;    
+}
+.MonsterRow{
+    background-image: url("../../public/images/monsters/row.png"); 
+    background-size: 100% 100%;
+    transition: background-image .1s cubic-bezier(0.17,0.67,0.83,0.67), z-index 0s;
+    height: 6rem;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3.9rem;
+    margin-top: 0.3rem;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.MonsterRow:hover{
+    background-image:  cubic-bezier(0.17,0.67,0.83,0.67);    
+    background-image: url("../../public/images/monsters/rowhover.png"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+.MonsterRowItem{
+    width: 20%;
+}
+@media only screen and (max-width: 900px) {
+    .TableHeadItem{
+        width: 100%;
+    }
+    .MonsterRowItem{
+        width: 100%;
+    }
+    .Alignment{
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 800px) {
+    .TableHeadItem{
+        width: 100%;
+    }
+    .MonsterRowItem{
+        width: 100%;
+    }
+    .Size{
+        display: none;
+    }
+
+
+}
