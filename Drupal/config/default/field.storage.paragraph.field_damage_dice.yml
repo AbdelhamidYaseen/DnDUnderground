@@ -1,0 +1,21 @@
+uuid: a4bcca3e-a4a1-4e39-b5b7-20b873bd705b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_damage_dice
+field_name: field_damage_dice
+entity_type: paragraph
+type: string
+settings:
+  max_length: 5
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

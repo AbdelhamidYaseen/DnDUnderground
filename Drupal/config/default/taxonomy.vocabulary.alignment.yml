@@ -1,0 +1,8 @@
+uuid: 87a76d75-a82a-4fbe-8881-5eb91d3db8e5
+langcode: en
+status: true
+dependencies: {  }
+name: Alignment
+vid: alignment
+description: 'A creatures natural or chosen disposition on the chaotic/lawfull & evil/good scale.'
+weight: 0

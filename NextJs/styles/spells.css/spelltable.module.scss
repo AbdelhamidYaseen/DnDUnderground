@@ -2,104 +2,62 @@ $color-alpha: #b78846;
 
 
 .Table{
-    width: 100%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
     
 }
 .TableHeadRow{
-    width: 75%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    padding: 2.5rem;
+    padding-left: 3.9rem;
+    display: flex;
+    font-weight: 700;
+    font-size: 1.2em; 
+    background-image: url("../../public/images/monsters/row.png"); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 
 }
 .TableHeadRowTitle{
     font-weight: 600;
-    font-size: 1.2em;
-    text-align: center;
+    font-size: 1em;
     display: flex;
-    align-items: center;
-    border-bottom: solid var(--shade) 3px;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.3rem;
-    padding: 0.7rem;
-    display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0.3rem;
-    transform: translate3d(0%, -0%, 0);
     width: 100%;
-    justify-content: start;
-    align-items: center;
 }
 .TableBody{
-    width: 75%;
     margin-left: auto;
     margin-right: auto;
 
 }
 .TableRow{
+    background-image: url("../../public/images/monsters/row.png"); 
+    background-size: 100% 100%;
+    transition: background-image .1s cubic-bezier(0.17,0.67,0.83,0.67), z-index 0s;
+    height: 6rem;
+    background-repeat: no-repeat;
     display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    background-color: blanchedalmond;
-    padding: 0.3rem;
-    border: 2px solid $color-alpha;
-    transform: translate3d(0%, -0%, 0);
-    width: 100%;
-
-    &:before, &:after {
-        content: "•";
-        position: absolute;
-        width: 14px;
-        height: 14px;
-        font-size: 14px;
-        color: $color-alpha;
-        border: 2px solid $color-alpha;
-        line-height: 12px;
-        top: 5px;
-        text-align: center;
-      }
-        &:before {
-          left: 5px;
-        }
-        &:after {
-          right: 5px;
-        }
-}
-.TableRow2{
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    border: 2px solid $color-alpha;
-    padding: 1rem;
-    &:before, &:after {
-      content: "•";
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      font-size: 14px;
-      color: $color-alpha;
-      border: 2px solid $color-alpha;
-      line-height: 12px;
-      bottom: -2px;
-      text-align: center;
-    }
-    &:before {
-      left: -2px;
-    }
-    &:after {
-      right: -2px;
-    }
-  }
+    padding-left: 3.9rem;
+    margin-top: 0.3rem;
+    font-size: 1em;
+    font-weight: 600;
+}
+.TableRow:hover{
+    background-image:  cubic-bezier(0.17,0.67,0.83,0.67);    
+    background-image: url("../../public/images/monsters/rowhover.png"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
 .TableRowData{
-    width: 70%;
+    width: 100%;
 }
 .Search{
+    background-image: url("../../public/images/monsters/dndmonsterbackground.png");
     transition: ease-in-out 0.7s;
     position: relative;
     background-color: #e3d1a5;
@@ -108,34 +66,41 @@ $color-alpha: #b78846;
     width: 85%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
     padding-bottom: 5rem;
     border-radius: 0px 0px 15px 15px;
-    height: 25rem;
-    border: solid $color-alpha;
+    height: 30rem;
     border-top: 0;
-    min-height: fit-content;
+    box-shadow: 0 0 5px #979AA4;
+
 }
 .Classes{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
+    gap: 25px;
+    min-height: 11rem;
     transition: ease-in-out 1.7s;
-    min-height: fit-content;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }
+.Classes::-webkit-scrollbar {
+    height: 4px; 
+    width: 4px; 
+    border: 1px solid #d5d5d5;
+  }
 .ClassSearch{
+    background-size:"cover";
     transition: ease-in-out 0.7s;
     margin: 0.4rem;
     border-radius: 50%;
     border: solid black 2px;
-    background-color: white;
-    width: 5rem;
-    height: 5rem;
+    background-color: #28282B;
+    width: 3.9rem;
+    height: 3.9rem;
     text-align: center;
     display: flex;
     align-items: center;
@@ -153,7 +118,9 @@ $color-alpha: #b78846;
     flex-wrap: wrap;
     display: flex   ;
     width: 100%;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: ease-in-out 1s;
     margin-top: 2.5rem;
 }
@@ -227,7 +194,16 @@ $color-alpha: #b78846;
         transition: ease-in-out 0.3s;
     }
 }
-
+.PartOne{
+    display: flex;
+}
+.PartTwo{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .SmallerSearch{
     transition: ease-in-out 1s;
     height: fit-content;
@@ -237,3 +213,37 @@ $color-alpha: #b78846;
     transition: border ease 2s;
     border: 0;
 }
+@media only screen and (max-width: 1400px) {
+    .Classes{
+        justify-content: flex-start;
+    }
+    }
+
+@media only screen and (max-width: 1000px) {
+    .Classes{
+        justify-content: flex-start;
+    }
+    .Components{
+        display: none;
+    }
+    }
+    @media only screen and (max-width: 900px) {
+        .Search{
+            height: 50vh;
+        }
+        .Duration{
+            display: none;
+        }
+    
+    }
+    @media only screen and (max-width: 800px) {
+        .CastTime{
+            display: none;
+        }
+    }     
+    @media only screen and (max-width: 570px) {
+        .Search{
+            height: 55vh;
+        }
+}
+        

@@ -1,0 +1,52 @@
+uuid: 62b8baa9-925e-42e6-bf3f-88d1b8ec13f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vulnerabilites
+    - node.type.monster
+    - paragraphs.paragraphs_type.vulnerabilities_weaknesses_immun
+  module:
+    - entity_reference_revisions
+id: node.monster.field_vulnerabilites
+field_name: field_vulnerabilites
+entity_type: node
+bundle: monster
+label: Vulnerabilites
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vulnerabilities_weaknesses_immun: vulnerabilities_weaknesses_immun
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 10
+        enabled: false
+      attribute:
+        weight: 11
+        enabled: false
+      legendary_actions:
+        weight: 12
+        enabled: false
+      monster_base_values:
+        weight: 9
+        enabled: false
+      skills:
+        weight: 13
+        enabled: false
+      special_abilities:
+        weight: 14
+        enabled: false
+      speed:
+        weight: 15
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 16
+        enabled: true
+field_type: entity_reference_revisions

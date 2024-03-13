@@ -1,0 +1,99 @@
+uuid: 19ba5fbd-2a46-41b2-977a-860a80dca0dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.spellteaser
+    - field.field.node.spell.body
+    - field.field.node.spell.field_casting_time
+    - field.field.node.spell.field_components
+    - field.field.node.spell.field_concentration
+    - field.field.node.spell.field_duration
+    - field.field.node.spell.field_level
+    - field.field.node.spell.field_magic_casters
+    - field.field.node.spell.field_magic_school
+    - field.field.node.spell.field_material_components
+    - field.field.node.spell.field_range
+    - field.field.node.spell.field_ritual
+    - field.field.node.spell.field_upcasting_effect
+    - node.type.spell
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.spell.spellteaser
+targetEntityType: node
+bundle: spell
+mode: spellteaser
+content:
+  field_casting_time:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_components:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_concentration:
+    type: boolean
+    label: inline
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_duration:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_level:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_range:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_ritual:
+    type: boolean
+    label: inline
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  body: true
+  field_magic_casters: true
+  field_magic_school: true
+  field_material_components: true
+  field_upcasting_effect: true
+  links: true

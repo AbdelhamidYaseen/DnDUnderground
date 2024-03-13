@@ -1,0 +1,25 @@
+uuid: 382f9ad6-f920-4683-9236-be48a9558e9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sleight_of_hand
+    - paragraphs.paragraphs_type.skills
+id: paragraph.skills.field_sleight_of_hand
+field_name: field_sleight_of_hand
+entity_type: paragraph
+bundle: skills
+label: 'Sleight of Hand'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,3 +1,7 @@
+/*
+    * Custom error page (non existent page)
+    * Generates when you try to go to a page that does not exist
+*/
 const Page = () =>{
 
     return(

@@ -1,0 +1,20 @@
+uuid: 40d333dd-8355-4238-a3cd-aca09eaf9b14
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_dexterity_save
+field_name: field_dexterity_save
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,11 +1,19 @@
+/*
+  * Monsters page
+  * Renders all monsters nodes
+  * Requires getStaticProps to run && the endpoint to exist else it will crash
+*/
 import { Layout } from "components/layout";
-import { MonsterTable } from "components/node--monstertable";
+import { MonsterTable } from "components/monster-components/node--monstertable";
 import { drupal } from "lib/drupal";
-import { GetStaticPathsContext, GetStaticPropsResult } from "next";
+import { GetServerSidePropsResult, GetStaticPathsContext, GetStaticPropsResult } from "next";
 import { DrupalNode, DrupalView } from "next-drupal";
 import Head from "next/head";
 import { DrupalJsonApiParams } from "drupal-jsonapi-params"
 import path from "path";
+import { useEffect, useState } from "react";
+import base from "/styles/layout.css/layout.module.scss";
+
 
 interface IndexPageProps {
     nodes: DrupalNode[]
@@ -13,6 +21,11 @@ interface IndexPageProps {
   
 
 export default function Page ({nodes}:IndexPageProps){
+  //console.log(nodes)
+  const [pagination, setPagination] = useState(0);
+  useEffect(() => {
+    console.log(pagination)
+  }, [pagination]);
     return(
         <Layout>
             <Head>
@@ -23,11 +36,18 @@ export default function Page ({nodes}:IndexPageProps){
                 />
             </Head>
             <div style={{padding: "1rem"}}>
-                <div>
-                    <h1 className="mb-10 text-6xl font-black" style={{marginLeft:'7rem'}}>Monsters</h1>
+                <div className={base.pageheadercontainer}>
+                    <h1 className={base.pageheader} >Monsters 
+                    
+                    
+                    
+                    <input type="number" name="" id="" value={pagination} onChange={e=>setPagination(parseInt(e.target.value))}/></h1>
+                    
+                    
+                    
                     <hr style={{border:"solid darkblue 2px",marginLeft:"auto",marginRight:"auto", width:"85%"}}/>
                 </div>        
-                <div style={{paddingTop:"5rem",marginLeft:"auto",marginRight:"auto", width:"85%"}}>
+                <div style={{marginLeft:"auto",marginRight:"auto", width:"85%"}}>
 
 
                 <MonsterTable data={[...nodes.map((e)=>({
@@ -51,13 +71,17 @@ export default function Page ({nodes}:IndexPageProps){
 }
 
 
-export async function getStaticProps(
+export async function getServerSideProps (
     context
-  ): Promise<GetStaticPropsResult<IndexPageProps>> {
+  ): Promise<GetServerSidePropsResult<IndexPageProps>> {
 
     const params = new DrupalJsonApiParams()
     .addFields("node--monster", ["title","body","path","uid","field_monster_base_values"])
-    .addInclude(["node_type", "revision_uid", "uid,field_monster_base_values.field_aligment", "field_monster_base_values.field_size", "field_monster_base_values.field_aligment", "field_monster_base_values.field_type"]);
+    .addFields("links",["next","previous", "self"])
+    .addInclude(["node_type", "revision_uid", "uid,field_monster_base_values.field_aligment", "field_monster_base_values.field_size", "field_monster_base_values.field_aligment", "field_monster_base_values.field_type"])
+    .addPageLimit(1)
+    .addPageOffset(0);
+    ;
 
     const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
       "node--monster",

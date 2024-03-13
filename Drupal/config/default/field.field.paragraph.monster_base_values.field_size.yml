@@ -1,0 +1,29 @@
+uuid: aaeb8d2e-bbdc-488f-977a-5b9a420d7632
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_size
+    - paragraphs.paragraphs_type.monster_base_values
+    - taxonomy.vocabulary.size
+id: paragraph.monster_base_values.field_size
+field_name: field_size
+entity_type: paragraph
+bundle: monster_base_values
+label: Size
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      size: size
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

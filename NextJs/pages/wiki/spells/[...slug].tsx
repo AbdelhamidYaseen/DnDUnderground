@@ -1,10 +1,18 @@
+/*
+  * Spell Detail Page
+  * Contains general info about the spell
+  * Contains related items
+  * Requires getStaticProps to run && the endpoint to exist
+*/
+
+
 import { GetStaticPathsResult, GetStaticPropsResult } from "next"
 import Head from "next/head"
 import { DrupalNode } from "next-drupal"
 
 import { drupal } from "lib/drupal"
 import { Layout } from "components/layout"
-import { NodeSpell } from "components/node--spell"
+import { NodeSpell } from "components/spell-components/node--spell"
 
 
 interface NodePageProps {

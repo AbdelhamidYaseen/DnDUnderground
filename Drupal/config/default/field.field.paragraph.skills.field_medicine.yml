@@ -1,0 +1,25 @@
+uuid: e7f489c5-51f2-40a0-8df0-58ef6cfd6980
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_medicine
+    - paragraphs.paragraphs_type.skills
+id: paragraph.skills.field_medicine
+field_name: field_medicine
+entity_type: paragraph
+bundle: skills
+label: Medicine
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,3 +1,8 @@
+/*
+    * Custom error page for (forbidden access)
+    * Automatically renders when 403 error has occered
+*/
+
 const Page = () =>{
 
     return(

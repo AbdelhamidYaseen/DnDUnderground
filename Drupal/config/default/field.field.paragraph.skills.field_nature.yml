@@ -1,0 +1,25 @@
+uuid: ca1ee6a0-4f61-4dd0-aca8-c20bab9b2c0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nature
+    - paragraphs.paragraphs_type.skills
+id: paragraph.skills.field_nature
+field_name: field_nature
+entity_type: paragraph
+bundle: skills
+label: Nature
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

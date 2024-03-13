@@ -14,13 +14,18 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: verdana, geneva, sans-serif;
     div.__next{
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
   }
+  main{
+    height: 100%;
+  }
   body{
+    font-family: verdana, geneva, sans-serif;
     background-color: #f0f0f0;
   }
   /**/

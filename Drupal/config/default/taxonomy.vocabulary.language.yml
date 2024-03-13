@@ -1,0 +1,8 @@
+uuid: ba05ad1e-c06e-4c2f-abb9-a38068baf1c1
+langcode: en
+status: true
+dependencies: {  }
+name: Language
+vid: language
+description: 'The languages a creature can understand, speak, read and maybe write. '
+weight: 0

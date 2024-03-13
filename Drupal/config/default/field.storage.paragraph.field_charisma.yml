@@ -1,0 +1,20 @@
+uuid: e0824bce-76f1-4a83-8e86-66b0f141f8ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_charisma
+field_name: field_charisma
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

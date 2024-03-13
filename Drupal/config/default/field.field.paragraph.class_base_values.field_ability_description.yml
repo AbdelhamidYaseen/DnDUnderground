@@ -1,0 +1,19 @@
+uuid: 334c8df4-3828-4e6b-b3ff-93375c832145
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ability_description
+    - paragraphs.paragraphs_type.class_base_values
+id: paragraph.class_base_values.field_ability_description
+field_name: field_ability_description
+entity_type: paragraph
+bundle: class_base_values
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

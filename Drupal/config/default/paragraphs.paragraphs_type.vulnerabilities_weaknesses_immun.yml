@@ -1,0 +1,10 @@
+uuid: 4e510de3-913c-4e73-80be-f9d61d3f24bb
+langcode: en
+status: true
+dependencies: {  }
+id: vulnerabilities_weaknesses_immun
+label: 'Vulnerabilities, Weaknesses & Immunities'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

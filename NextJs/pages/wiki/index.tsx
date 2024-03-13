@@ -1,3 +1,10 @@
+/*
+  * Wiki page
+  * Contains guides for the subparts of every the wiki (small introductions)
+*/
+
+
+
 const Page = () =>{
 
     return(

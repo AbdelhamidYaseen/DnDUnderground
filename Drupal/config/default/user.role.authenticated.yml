@@ -2,7 +2,10 @@ uuid: c2452f2d-30b7-423e-828b-12067f11adcb
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.markdown_conversion
   module:
+    - filter
     - media
     - system
 _core:
@@ -13,4 +16,5 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'use text format markdown_conversion'
   - 'view media'

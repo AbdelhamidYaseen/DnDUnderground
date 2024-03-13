@@ -1,0 +1,134 @@
+uuid: 59d16e00-68ff-41a1-adfb-717fc21d3e0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.monster_base_values.field_aligment
+    - field.field.paragraph.monster_base_values.field_armor_class
+    - field.field.paragraph.monster_base_values.field_challenge_rating
+    - field.field.paragraph.monster_base_values.field_drawing
+    - field.field.paragraph.monster_base_values.field_hit_points
+    - field.field.paragraph.monster_base_values.field_hitdice
+    - field.field.paragraph.monster_base_values.field_imageurl
+    - field.field.paragraph.monster_base_values.field_languages
+    - field.field.paragraph.monster_base_values.field_proficiency_bonus
+    - field.field.paragraph.monster_base_values.field_senses
+    - field.field.paragraph.monster_base_values.field_size
+    - field.field.paragraph.monster_base_values.field_type
+    - paragraphs.paragraphs_type.monster_base_values
+  module:
+    - image
+    - link
+id: paragraph.monster_base_values.default
+targetEntityType: paragraph
+bundle: monster_base_values
+mode: default
+content:
+  field_aligment:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_armor_class:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_challenge_rating:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_drawing:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_hit_points:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_hitdice:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_imageurl:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_languages:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_proficiency_bonus:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_senses:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_size:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden: {  }

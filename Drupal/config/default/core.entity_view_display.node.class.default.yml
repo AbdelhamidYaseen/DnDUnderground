@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.class.body
+    - field.field.node.class.field_base_class_values
+    - field.field.node.class.field_class_table
     - node.type.class
   module:
+    - entity_reference_revisions
+    - tablefield
     - text
     - user
 id: node.class.default
@@ -19,6 +23,24 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_base_class_values:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_class_table:
+    type: tablefield
+    label: above
+    settings:
+      row_header: true
+      column_header: false
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

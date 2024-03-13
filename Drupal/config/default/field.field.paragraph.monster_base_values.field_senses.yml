@@ -1,0 +1,29 @@
+uuid: 5848547a-9626-4f6b-bb9c-cd711a4102bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_senses
+    - paragraphs.paragraphs_type.monster_base_values
+    - taxonomy.vocabulary.senses
+id: paragraph.monster_base_values.field_senses
+field_name: field_senses
+entity_type: paragraph
+bundle: monster_base_values
+label: Senses
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      senses: senses
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

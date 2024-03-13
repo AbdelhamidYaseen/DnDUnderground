@@ -1,0 +1,30 @@
+uuid: 348e69aa-ffb7-41a0-b940-a0aa0ee99dc8
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - paragraphs
+id: paragraph.field_drawing
+field_name: field_drawing
+entity_type: paragraph
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: a41fee6a-bc41-4075-b19d-4a136f072450
+    alt: 'placeholder image'
+    title: placeholder
+    width: 612
+    height: 612
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -6,8 +6,45 @@ dependencies:
     - field.field.node.page.body
     - node.type.page
   module:
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d6630f8c-ec02-4f9a-be7f-7ba6b8501e14:
+            uuid: d6630f8c-ec02-4f9a-be7f-7ba6b8501e14
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          cfa3214a-cdc9-4b75-94d7-5c80d94524dd:
+            uuid: cfa3214a-cdc9-4b75-94d7-5c80d94524dd
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
 bundle: page

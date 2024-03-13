@@ -1,0 +1,10 @@
+uuid: d42b3306-f317-4b37-b11a-d75e428ec4e5
+langcode: en
+status: true
+dependencies: {  }
+id: monster_base_values
+label: 'Monster Base Values'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

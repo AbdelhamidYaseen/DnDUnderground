@@ -1,0 +1,29 @@
+uuid: 142ed912-7292-4c7c-9705-47326aa829d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_saving_throws
+    - paragraphs.paragraphs_type.class_base_values
+    - taxonomy.vocabulary.attributes
+id: paragraph.class_base_values.field_saving_throws
+field_name: field_saving_throws
+entity_type: paragraph
+bundle: class_base_values
+label: 'Saving Throws'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      attributes: attributes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

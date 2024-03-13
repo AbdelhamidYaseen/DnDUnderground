@@ -1,77 +1,17 @@
 $color-alpha: #b78846;
-
-.fill:hover,
-.fill:focus {
-  box-shadow: inset 0 0 0 2em var(--hover);
-}
-
-// Animate the size, outside
-.pulse:hover, 
-.pulse:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-}
+$highlightColor: #822000;
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--hover); }
 }
-
-// Stack multiple shadows, one from the left, the other from the right
-.close:hover,
-.close:focus {
-  box-shadow: 
-    inset -3.5em 0 0 0 var(--hover),
-    inset 3.5em 0 0 0 var(--hover);  
-}
-
-// Size can also be negative; see how it's smaller than the element
 .raise:hover,
 .raise:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
 }
-
-// Animating from the bottom
-.up:hover,
-.up:focus {
-  box-shadow: inset 0 -3.25em 0 0 var(--hover);
-}
-
-// And from the left
-.slide:hover,
-.slide:focus {
-  box-shadow: inset 6.5em 0 0 0 var(--hover);
-}
-
-// Multiple shadows, one on the outside, another on the inside
-.offset {  
-  box-shadow: 
-    0.3em 0.3em 0 0 var(--color),
-    inset 0.3em 0.3em 0 0 var(--color);
-  
-  &:hover,
-  &:focus {
-    box-shadow: 
-      0 0 0 0 var(--hover),
-      inset 6em 3.5em 0 0 var(--hover);
-  }
-}
-
-//=== Set button colors
-// If you wonder why use Sass vars or CSS custom properties...
-  // Make a map with the class names and matching colors
 $colors: (
-  fill: #a972cb,
-  pulse: #ef6eae, 
-  close: #ff7f82, 
   raise: black, 
-  up: #e4cb58, 
-  slide: #8fc866, 
-  offset: #19bc8b
 );
-
-// Sass variables compile to a static string; CSS variables are dynamic and inherited
-  // Loop through the map and set CSS custom properties using Sass variables
 @each $button, $color in $colors {
   .#{$button} {
     --color: #{$color};
@@ -80,16 +20,10 @@ $colors: (
 }
 
 
-
-
 .Title{
     font-size: 4em;
 }
-.LargeBreak{
-    border-color: var(--main);
-    border: solid 5px;
-    border-radius: 30%;
-}
+
 .SmallerBreak{
     border-color: var(--main);
     border: solid 3px;
@@ -98,19 +32,61 @@ $colors: (
     margin-left: 2rem;
     width: 90%;
 }
+.TopTexture{
+  background-image: url("../../public/images/monsters/texture.png");
+  height: 3rem;
+  width: 100%;
+  position: absolute;
+  top:0.5rem;
+  border: transparent;
+  //background-repeat: no-repeat;
+  background-size: contain;
+
+
+}
 .Info{
     width: 60%;
 }
+.MonsterSheetTopBar{
+  position: absolute;
+  top:0;
+  min-width: 100%;
+  min-height: 0.5rem;
+  background-image: url("../../public/images/monsters/monsterborder.png");
+  border: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+}
+.MonsterSheetBottomBar{
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 0.5rem;
+  background-image: url("../../public/images/monsters/monsterborder.png");
+}
+
 .Container{
-    background-color: white;
+  position: relative;
     display: flex;
-    box-shadow: 3px 5px 5px black;}
+    background-image: url("../../public/images/monsters/dndmonsterbackground.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 5px #979AA4;
+  }
 .SpellStats{
     height: fit-content;
     min-height: 20rem;
-    font-size: 2.1em;
+    font-size: 1.4em;
     display: flex;
     flex-wrap: wrap;
+                color: #822000;
+
+    
 }
 .SpellText{
     height: fit-content;
@@ -136,19 +112,27 @@ $colors: (
     align-items: center;
     padding: 0.3rem;
     border: unset 4px black;
-    background-color: var(--tint);
-    border-radius: 7px;
+    color: black;
     width: 17rem;
-    color: var(--text);
     font-size: 0.7em;
-    font-weight: 650;
+    font-weight: 500;
     text-align: center;
     box-shadow: black 3px 3px 3px 3px;
 
 }
+.Seperator{
+  padding-top: 0.8rem;
+  padding-bottom: 0.4rem;
+  padding-left: 5rem;
+  width: 100%;
+  img{
+      height: 0.8rem;
+  }
+}
+
 .StatLabel{
     width: 17rem;
-    font-weight: 650;
+    font-weight: 600;
     font-size: 1em;
     display: flex;
     justify-content: center;

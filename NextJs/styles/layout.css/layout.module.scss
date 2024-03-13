@@ -5,4 +5,15 @@
     > div{
         height: 100%;
     }
-} 
+}
+.pageheader{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1rem;
+
+}
+.pageheadercontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

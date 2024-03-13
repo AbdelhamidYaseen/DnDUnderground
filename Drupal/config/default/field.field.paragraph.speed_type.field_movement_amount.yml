@@ -1,0 +1,23 @@
+uuid: e660307f-d9c0-4e7a-8533-5c9a29c39b2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_movement_amount
+    - paragraphs.paragraphs_type.speed_type
+id: paragraph.speed_type.field_movement_amount
+field_name: field_movement_amount
+entity_type: paragraph
+bundle: speed_type
+label: 'Movement Amount'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

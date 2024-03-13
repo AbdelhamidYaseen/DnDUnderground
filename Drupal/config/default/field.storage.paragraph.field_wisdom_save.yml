@@ -1,0 +1,20 @@
+uuid: 5078e18d-d833-44eb-a4fe-fb3878143883
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_wisdom_save
+field_name: field_wisdom_save
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

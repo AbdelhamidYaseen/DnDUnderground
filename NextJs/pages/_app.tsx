@@ -1,3 +1,9 @@
+/*
+  * This page generates the base layout of the webapp, this contains the header, nav, body and footer that are to be generated on every page
+  * To make it easier to generate the navigation the nav is made up of an array of CustomLinkProps each containing the possibilty of containing children for submenus
+  * Header is sticky
+*/
+
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
@@ -12,6 +18,9 @@ import layout from "/styles/layout.css/layout.module.scss";
 
 import Image from 'next/image';
 import { useState } from 'react';
+
+
+
 
 //Amount of links in Nav
 const NavLinks : CustomLinkProps [] = [
@@ -231,7 +240,7 @@ const FooterBar = () =>{
   )
 }
 
-//Root of project || this will render on every page
+//Root of project && this will render on every page
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={layout.__next}>

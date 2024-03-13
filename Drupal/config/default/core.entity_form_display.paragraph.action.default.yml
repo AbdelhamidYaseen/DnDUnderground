@@ -1,0 +1,57 @@
+uuid: 0f8bb50e-a5b7-460a-8b8c-f827f63e4692
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.action.field_attack_bonus
+    - field.field.paragraph.action.field_damage_bonus
+    - field.field.paragraph.action.field_damage_dice
+    - field.field.paragraph.action.field_description
+    - field.field.paragraph.action.field_name
+    - paragraphs.paragraphs_type.action
+id: paragraph.action.default
+targetEntityType: paragraph
+bundle: action
+mode: default
+content:
+  field_attack_bonus:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_damage_bonus:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_damage_dice:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

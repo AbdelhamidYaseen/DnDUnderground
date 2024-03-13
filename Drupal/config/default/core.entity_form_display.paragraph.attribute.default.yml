@@ -1,0 +1,62 @@
+uuid: dce99b18-d444-40af-9629-587f4d95ee30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.attribute.field_charisma
+    - field.field.paragraph.attribute.field_constitution
+    - field.field.paragraph.attribute.field_dexterity
+    - field.field.paragraph.attribute.field_intelligence
+    - field.field.paragraph.attribute.field_strength
+    - field.field.paragraph.attribute.field_wisdom
+    - paragraphs.paragraphs_type.attribute
+id: paragraph.attribute.default
+targetEntityType: paragraph
+bundle: attribute
+mode: default
+content:
+  field_charisma:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_constitution:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_dexterity:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_intelligence:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_strength:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_wisdom:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,23 @@
+uuid: c580b297-ee25-44a8-98e9-ab84513ab5d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_attack_bonus
+    - paragraphs.paragraphs_type.action
+id: paragraph.action.field_attack_bonus
+field_name: field_attack_bonus
+entity_type: paragraph
+bundle: action
+label: 'Attack Bonus'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

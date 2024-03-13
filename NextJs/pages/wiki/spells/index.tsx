@@ -1,9 +1,18 @@
+/*
+  * Spells page
+  * Renders all spell nodes
+  * Contains filter, sort functions
+  * Requires getStaticProps to run && the endpoint to exist
+*/
+
+
+
 import { Layout } from "components/layout";
 import { drupal } from "lib/drupal";
 import { GetStaticPropsResult } from "next";
 import { DrupalNode, DrupalTaxonomyTerm } from "next-drupal";
 import Head from "next/head";
-
+import base from "/styles/layout.css/layout.module.scss";
 import tableStyles from "/styles/spells.css/spelltable.module.scss";
 import { useState } from "react";
 import Link from "next/link";
@@ -36,22 +45,18 @@ const SpellRow = (props: SpellRowProps) => {
     return e;
   }
   return (
-    <li className={tableStyles.TableRow}>
-      <div className={tableStyles.TableRow2}>
-      <p className={tableStyles.TableRowData}>{props.level}</p>
-      <p className={tableStyles.TableRowData}><Link href={`/wiki/spells${props.path}`}>{props.name}</Link></p>
-      <p className={tableStyles.TableRowData}>{props.school}</p>
-      <p className={tableStyles.TableRowData}>{props.duration}</p>
-      <p className={tableStyles.TableRowData} >{props.castingTime}</p>
-      <p className={tableStyles.TableRowData} >{props.concentration === false ? "no" : "yes"}</p>
-      <p className={tableStyles.TableRowData} >{props.ritual  === false ? "no" : "yes"}</p>
-      <p className={tableStyles.TableRowData} >
+    <Link href={`/wiki/spells${props.path}`}className={tableStyles.TableRow}>
+      <div className={tableStyles.TableRowData}>{props.level}</div>
+      <div className={tableStyles.TableRowData}><>{props.name}</></div>
+      <div className={tableStyles.TableRowData}>{props.school}</div>
+      <div className={`${tableStyles.TableRowData} ${tableStyles.CastTime}`}>{props.duration}</div>
+      <div className={`${tableStyles.TableRowData} ${tableStyles.Duration}`}>{props.castingTime}</div>
+      <div className={`${tableStyles.TableRowData} ${tableStyles.Components}`} >
         {props.components.map((e) => (
           <>{returnShorterComponents(e.name)}</>
         ))}
-      </p>
       </div>
-    </li>
+    </Link>
   );
 };
 
@@ -107,14 +112,14 @@ export default function IndexPage({ nodes }: IndexPageProps) {
 
     //Url for filters
     const artficerUrl = "/images/spells/artificer.jpg"
-    const bardrUrl = "/images/spells/bard.jpg"
-    const clericrUrl = "/images/spells/cleric.jpg"
-    const druidUrl = "/images/spells/druid.jpg"
-    const paladinUrl = "/images/spells/paladin.jpg"
-    const rangerUrl = "/images/spells/ranger.jpg"
-    const sorcererUrl = "/images/spells/sorcerer.jpg"
-    const warlockUrl = "/images/spells/warlock.jpg"
-    const wizardUrl = "/images/spells/wizard.jpg"
+    const bardrUrl = "/images/spells/bard.png"
+    const clericrUrl = "/images/spells/cleric.png"
+    const druidUrl = "/images/spells/druid.png"
+    const paladinUrl = "/images/spells/paladin.png"
+    const rangerUrl = "/images/spells/ranger.png"
+    const sorcererUrl = "/images/spells/sorcerer.png"
+    const warlockUrl = "/images/spells/warlock.png"
+    const wizardUrl = "/images/spells/wizard.png"
 
     //Filters out the unique values from casting_time & duration an makes a new array from them
     const uniqueValues = Array.from(new Set([
@@ -145,78 +150,81 @@ export default function IndexPage({ nodes }: IndexPageProps) {
         <div style={{ padding: "1rem" }}>
 
 
-          <div>
-            <h1 className="mb-10 text-6xl font-black" style={{marginLeft:'7rem'}}>Spells</h1>
-            <hr style={{border:"solid darkblue 2px",marginLeft:"auto",marginRight:"auto", width:"85%"}}/>
-          </div>
+        <div className={base.pageheadercontainer}>
+                    <h1 className={base.pageheader} >Spells</h1>
+                    <hr style={{border:"solid darkblue 2px",marginLeft:"auto",marginRight:"auto", width:"85%"}}/>
+        </div>        
           
           <div className={`${tableStyles.Search} ${searchOpen ? tableStyles.Search : tableStyles.SmallerSearch}`}>
             
             <div className={`${tableStyles.Classes} ${searchOpen ? tableStyles.Classes : tableStyles.HiddenMenu}`}>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${artficerUrl})`,backgroundPosition:"center",filter : artificer ? "blur(0px)" : "blur(2px)",border : artificer ? "green 3px solid" : "black 2px solid"}} onClick={() => setArtificer(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${artficerUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : artificer ? "blur(0px)" : "blur(1px)",border : artificer ? "green 3px solid" : "black 2px solid"}} onClick={() => setArtificer(prevState => !prevState)}></div>
                 <p>Artificer</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${bardrUrl})`,backgroundPosition:"center",filter : bard ? "blur(0px)" : "blur(2px)",border : bard ? "green 3px solid" : "black 2px solid"}} onClick={() => setBard(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${bardrUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : bard ? "blur(0px)" : "blur(1px)",border : bard ? "green 3px solid" : "black 2px solid"}} onClick={() => setBard(prevState => !prevState)}></div>
                 <p>Bard</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${clericrUrl})`,backgroundPosition:"center",filter : cleric ? "blur(0px)" : "blur(2px)",border : cleric ? "green 3px solid" : "black 2px solid"}} onClick={() => setCleric(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${clericrUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : cleric ? "blur(0px)" : "blur(1px)",border : cleric ? "green 3px solid" : "black 2px solid"}} onClick={() => setCleric(prevState => !prevState)}></div>
                 <p>Cleric</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${druidUrl})`,backgroundPosition:"center",filter : druid ? "blur(0px)" : "blur(2px)",border : druid ? "green 3px solid" : "black 2px solid"}} onClick={() => setDruid(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${druidUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : druid ? "blur(0px)" : "blur(1px)",border : druid ? "green 3px solid" : "black 2px solid"}} onClick={() => setDruid(prevState => !prevState)}></div>
                 <p>Druid</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${paladinUrl})`,backgroundPosition:"center",filter : paladin ? "blur(0px)" : "blur(2px)",border : paladin ? "green 3px solid" : "black 2px solid"}} onClick={() => setPaladin(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${paladinUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : paladin ? "blur(0px)" : "blur(1px)",border : paladin ? "green 3px solid" : "black 2px solid"}} onClick={() => setPaladin(prevState => !prevState)}></div>
                 <p>Paladin</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${rangerUrl})`,backgroundPosition:"center",filter : ranger ? "blur(0px)" : "blur(2px)",border : ranger ? "green 3px solid" : "black 2px solid"}} onClick={() => setRanger(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${rangerUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : ranger ? "blur(0px)" : "blur(1px)",border : ranger ? "green 3px solid" : "black 2px solid"}} onClick={() => setRanger(prevState => !prevState)}></div>
                 <p>Ranger</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${sorcererUrl})`,backgroundPosition:"center",filter : sorcerer ? "blur(0px)" : "blur(2px)",border : sorcerer ? "green 3px solid" : "black 2px solid"}} onClick={() => setSorcerer(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${sorcererUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : sorcerer ? "blur(0px)" : "blur(1px)",border : sorcerer ? "green 3px solid" : "black 2px solid"}} onClick={() => setSorcerer(prevState => !prevState)}></div>
                 <p>Sorcerer</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${warlockUrl})`,backgroundPosition:"center",filter : warlock ? "blur(0px)" : "blur(2px)",border : warlock ? "green 3px solid" : "black 2px solid"}} onClick={() => setWarlock(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${warlockUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : warlock ? "blur(0px)" : "blur(1px)",border : warlock ? "green 3px solid" : "black 2px solid"}} onClick={() => setWarlock(prevState => !prevState)}></div>
                 <p>Warlock</p>
               </div>
               <div className={tableStyles.ClassDiv}>
-                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${wizardUrl})`,backgroundPosition:"center",filter : wizard ? "blur(0px)" : "blur(2px)",border : wizard ? "green 3px solid" : "black 2px solid"}} onClick={() => setWizard(prevState => !prevState)}></div>
+                <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{backgroundImage:`url(${wizardUrl})`,backgroundPosition:"center",backgroundSize:"cover",filter : wizard ? "blur(0px)" : "blur(1px)",border : wizard ? "green 3px solid" : "black 2px solid"}} onClick={() => setWizard(prevState => !prevState)}></div>
                 <p>Wizard</p>
               </div>
             </div>
 
             <div className={`${tableStyles.InputSearch} ${searchOpen ? tableStyles.InputSearch : tableStyles.HiddenMenu}`}>
-            
-            <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{ backgroundColor: allSpells ? 'lightblue' : 'white' }} onClick={() => 
+            <div className={tableStyles.PartOne}>
+              <div className={`${tableStyles.ClassSearch} ${searchOpen ? tableStyles.ClassSearch : tableStyles.HiddenMenu}`} style={{ backgroundColor: allSpells ? 'lightblue' : 'white' }} onClick={() => 
               setAllSpellsInversion()
               }>All Spells</div>
-              
+            </div>
+            <div className={tableStyles.PartTwo}>
               <div className={`${tableStyles.InputDiv} ${searchOpen ? tableStyles.InputDiv : tableStyles.HiddenMenu}`}>
-                <label htmlFor="">Spell Name</label>
-                <input type="search" className={tableStyles.Input} value={filterName} onChange={e=>setFilterName(e.target.value)}/>
-              </div>
-              
-              <div className={`${tableStyles.InputDiv} ${searchOpen ? tableStyles.InputDiv : tableStyles.HiddenMenu}`}>
-                <label htmlFor="">Spell Level</label>
-                <input type="search"  className={tableStyles.Input} value={filterLevel} onChange={e=>setFilterLevel(e.target.value)}/>
-              </div>
+                  <label htmlFor="">Spell Name</label>
+                  <input type="search" className={tableStyles.Input} value={filterName} onChange={e=>setFilterName(e.target.value)}/>
+                </div>
+                
                 <div className={`${tableStyles.InputDiv} ${searchOpen ? tableStyles.InputDiv : tableStyles.HiddenMenu}`}>
-                <label htmlFor="">Casting Tags</label>
-                <select  className={tableStyles.Input} value={filterTags} onChange={e=>setFilterTags(e.target.value)}>
-                <option selected value={""}>-- none --</option>
-                  {
-                    uniqueValues.map((e)=>(
-                      <option key={e}>{e}</option>
-                    ))
-                  }
-                </select>
+                  <label htmlFor="">Spell Level</label>
+                  <input type="search"  className={tableStyles.Input} value={filterLevel} onChange={e=>setFilterLevel(e.target.value)}/>
+                </div>
+                  <div className={`${tableStyles.InputDiv} ${searchOpen ? tableStyles.InputDiv : tableStyles.HiddenMenu}`}>
+                  <label htmlFor="">Casting Tags</label>
+                  <select  className={tableStyles.Input} value={filterTags} onChange={e=>setFilterTags(e.target.value)}>
+                  <option selected value={""}>-- none --</option>
+                    {
+                      uniqueValues.map((e)=>(
+                        <option key={e}>{e}</option>
+                      ))
+                    }
+                  </select>
               </div>
+            </div>
+              
             </div>
 
             <div className={`${tableStyles.CollapseButton} ${searchOpen ? tableStyles.CollapseButton : tableStyles.RotatedButton}`} onClick={()=>setSearchOpen(!searchOpen)}>
@@ -228,26 +236,26 @@ export default function IndexPage({ nodes }: IndexPageProps) {
           <div className={tableStyles.Table}>
 
               <ul className={tableStyles.TableHeadRow}>
-                    <li className={tableStyles.TableHeadRowTitle}
+                    <div className={tableStyles.TableHeadRowTitle}
                       onClick={e=>setSort("level")}
                       style={{cursor:"pointer"}}
-                    >Level</li>
-                    <li className={tableStyles.TableHeadRowTitle}
+                    >Level</div>
+                    <div className={tableStyles.TableHeadRowTitle}
                       onClick={e=>setSort("name")}
                       style={{cursor:"pointer"}}
-                    >Name</li>
-                    <li className={tableStyles.TableHeadRowTitle}>School</li>
-                    <li className={tableStyles.TableHeadRowTitle}>Casting Time</li>
-                    <li className={tableStyles.TableHeadRowTitle}
-                    >Duration</li>
-                    <li className={tableStyles.TableHeadRowTitle} style={{}}>Concentration</li>
-                    <li className={tableStyles.TableHeadRowTitle}>Ritual</li>
-                    <li className={tableStyles.TableHeadRowTitle}>Components</li>
+                    >Name</div>
+                    <div className={tableStyles.TableHeadRowTitle}>School</div>
+                    <div className={`${tableStyles.TableHeadRowTitle} ${tableStyles.CastTime}`}>Casting Time</div>
+                    <div className={`${tableStyles.TableHeadRowTitle} ${tableStyles.Duration}`}
+                    >Duration</div>
+                    <div className={`${tableStyles.TableHeadRowTitle} ${tableStyles.Components}`}>Components</div>
               </ul>
 
-            <ul className={tableStyles.TableBody}>
+            <div className={tableStyles.TableBody}>
 
-              {nodes.filter((e)=> {if(e.title.toUpperCase().includes(filterName.toUpperCase())){return true}}).filter((e)=> {if(e.field_level == filterLevel || filterLevel == ""){return true}})
+              {
+              nodes
+                .filter((e)=> {if(e.title.toUpperCase().includes(filterName.toUpperCase())){return true}}).filter((e)=> {if(e.field_level == filterLevel || filterLevel == ""){return true}})
                 .filter((e)=> {if(e.field_casting_time == filterTags || filterTags == "" ||e.field_duration == filterTags ){return true}})
                 .filter((e) => {
                   let found = false;
@@ -281,7 +289,7 @@ export default function IndexPage({ nodes }: IndexPageProps) {
                     key={node.id} path={node.path.alias}                />
               ))}
 
-            </ul>
+            </div>
 
           </div>
           

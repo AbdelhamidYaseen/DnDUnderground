@@ -1,0 +1,57 @@
+uuid: d3383290-eedd-4830-bb9b-2892820003e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class_base_values.field_ability_description
+    - field.field.paragraph.class_base_values.field_armor_proficiencies
+    - field.field.paragraph.class_base_values.field_explanation
+    - field.field.paragraph.class_base_values.field_saving_throws
+    - field.field.paragraph.class_base_values.field_weapon_proficiencies
+    - paragraphs.paragraphs_type.class_base_values
+  module:
+    - text
+id: paragraph.class_base_values.default
+targetEntityType: paragraph
+bundle: class_base_values
+mode: default
+content:
+  field_ability_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_armor_proficiencies:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_explanation:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_saving_throws:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_weapon_proficiencies:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

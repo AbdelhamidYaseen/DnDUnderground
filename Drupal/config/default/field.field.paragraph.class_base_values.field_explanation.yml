@@ -1,0 +1,24 @@
+uuid: 01f8e56e-d32a-4922-96c2-d3e64613037b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_explanation
+    - filter.format.markdown_conversion
+    - paragraphs.paragraphs_type.class_base_values
+  module:
+    - text
+id: paragraph.class_base_values.field_explanation
+field_name: field_explanation
+entity_type: paragraph
+bundle: class_base_values
+label: Explanation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - markdown_conversion
+field_type: text_long

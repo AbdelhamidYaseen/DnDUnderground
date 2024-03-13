@@ -1,0 +1,35 @@
+uuid: b70bcfe2-445a-4335-bb99-0cd327480c18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_table
+    - node.type.class
+  module:
+    - tablefield
+    - tablefield_required
+third_party_settings:
+  tablefield_required:
+    required_rows: '0,20'
+    required_cols: ''
+    multivalue_inherit: true
+id: node.class.field_class_table
+field_name: field_class_table
+entity_type: node
+bundle: class
+label: 'Class Table'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  export: false
+  restrict_rebuild: false
+  restrict_import: false
+  lock_values: false
+  cell_processing: 0
+  empty_rules:
+    ignore_table_structure: false
+    ignore_table_header: false
+field_type: tablefield

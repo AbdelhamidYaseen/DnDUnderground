@@ -1,0 +1,25 @@
+uuid: 89db5568-9388-45fc-95d9-719f67c0c52a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_dexterity_save
+    - paragraphs.paragraphs_type.saving_throws
+id: paragraph.saving_throws.field_dexterity_save
+field_name: field_dexterity_save
+entity_type: paragraph
+bundle: saving_throws
+label: 'Dexterity Save'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

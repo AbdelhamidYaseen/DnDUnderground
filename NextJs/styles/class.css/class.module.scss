@@ -1,0 +1,201 @@
+.Container{
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.SubTitle{
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-bottom: 0.4rem;
+    border-bottom: orange solid 1px;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+}
+.Abilities{
+    h3{
+        width: 100%;
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+    p{
+        font-size: 1.1em;
+        line-height: 1.8rem;
+    }
+    ul{
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        padding-left: 2rem;
+        li{
+            list-style:inside;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+            text-align: left;
+            list-style-position: outside;
+
+        }
+    }
+
+}
+.Table{
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    font-family: 'Arial';
+    margin: 1rem auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #eee;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+        0px 10px 20px rgba(0,0,0,0.05),
+        0px 20px 20px rgba(0,0,0,0.05),
+        0px 30px 20px rgba(0,0,0,0.05);
+    tr {
+    }
+    th, td {
+        color: #5e5e5e;
+        border: 1px solid #eee;
+        padding: 12px 35px;
+        border-collapse: collapse;
+    }
+    th {
+        color: black;
+        text-transform: uppercase;
+        font-size: 12px;
+        &.last {
+        border-right: none;
+        }
+    }
+}
+.TableHead{
+    text-align: left;
+    background-image: url("../../public/images/monsters/dndmonsterbackground.png");
+}
+.TableHeader{
+}
+.TableBody{
+
+}
+.TableRow{
+    text-align: left;
+}
+.Wrapper{
+    overflow-x: auto;
+}
+.Label{
+    font-weight: 680;
+    margin-right: 0.4rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+.Data{
+    font-size: 0.9em;
+}
+.ThirdTitle{
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+.DataText{
+    margin-left: 0.7rem;
+}
+.CardContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 25px));
+    row-gap: 125px;
+    column-gap: 500px;
+    width: 85%;
+    justify-content: center;    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+.Card{
+    position: relative;
+    border-radius: 25px;
+    height: 400px;
+    width: 300px;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: .5s;
+    &:hover .CardFront{
+        transform: rotateX(-180deg);
+    }
+    &:hover .CardBack{
+        transform: rotateX(0deg);
+    }
+}
+.CardFront{
+    background-color: black;
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    box-shadow: 0 0.5em 0.5em 0.4em #979AA4;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: .5s};
+.CardBack{
+    box-shadow: 0 0.5em 0.5em 0.4em #979AA4;
+    color: black;
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../../public/images/monsters/dndmonsterbackground.png");
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: .5s;
+    h3{
+        text-align: center;
+        font-size: 26px;
+        border-bottom: solid #822000;
+        margin-bottom: 0.2rem;
+        span{
+            font-size: 20px
+        }
+    }
+        a{
+        height: 20px;
+        width: 20px;
+        padding: 5px 5px;
+        border-radius: 4px;
+        line-height: 20px;
+    }
+}
+.Description{
+    padding-top: 1.1rem;
+    padding-left: 0.7rem;
+    padding-bottom: 2.1rem;
+    border-bottom: solid #822000;
+
+}
+.Info{
+    padding-top: 1.1rem;
+    padding-left: 0.7rem;
+    .Label{
+        display: inline;
+    }
+    .Data{
+        display: inline;
+    }
+}
+.Button{
+    height: fit-content;
+    margin-left: auto;
+    width: 100%;
+    background-color: red;
+
+}

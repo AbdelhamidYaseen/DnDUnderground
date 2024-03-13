@@ -1,0 +1,55 @@
+uuid: 12293f25-8395-41de-ade2-eb8b15190a79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class_base_values.field_ability_description
+    - field.field.paragraph.class_base_values.field_armor_proficiencies
+    - field.field.paragraph.class_base_values.field_explanation
+    - field.field.paragraph.class_base_values.field_saving_throws
+    - field.field.paragraph.class_base_values.field_weapon_proficiencies
+    - paragraphs.paragraphs_type.class_base_values
+  module:
+    - text
+id: paragraph.class_base_values.default
+targetEntityType: paragraph
+bundle: class_base_values
+mode: default
+content:
+  field_ability_description:
+    type: string_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_armor_proficiencies:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_explanation:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_saving_throws:
+    type: options_buttons
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_weapon_proficiencies:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

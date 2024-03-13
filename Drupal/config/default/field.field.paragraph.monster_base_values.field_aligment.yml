@@ -1,0 +1,29 @@
+uuid: 76eb99c0-a8e9-4e47-9648-785d760e8a39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_aligment
+    - paragraphs.paragraphs_type.monster_base_values
+    - taxonomy.vocabulary.alignment
+id: paragraph.monster_base_values.field_aligment
+field_name: field_aligment
+entity_type: paragraph
+bundle: monster_base_values
+label: Aligment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      alignment: alignment
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

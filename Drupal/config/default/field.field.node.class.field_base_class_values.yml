@@ -1,0 +1,64 @@
+uuid: b10983a0-506c-4a88-b2d1-cf2bf48bcf6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_base_class_values
+    - node.type.class
+    - paragraphs.paragraphs_type.class_base_values
+  module:
+    - entity_reference_revisions
+id: node.class.field_base_class_values
+field_name: field_base_class_values
+entity_type: node
+bundle: class
+label: 'Base Class Values'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      class_base_values: class_base_values
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 13
+        enabled: false
+      attribute:
+        weight: 14
+        enabled: false
+      class_base_values:
+        weight: 15
+        enabled: true
+      legendary_actions:
+        weight: 16
+        enabled: false
+      legendary_container:
+        weight: 17
+        enabled: false
+      monster_base_values:
+        weight: 18
+        enabled: false
+      saving_throws:
+        weight: 19
+        enabled: false
+      skills:
+        weight: 20
+        enabled: false
+      special_abilities:
+        weight: 21
+        enabled: false
+      speed:
+        weight: 22
+        enabled: false
+      speed_type:
+        weight: 23
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

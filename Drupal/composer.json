@@ -29,9 +29,13 @@
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_views": "^1.1",
+        "drupal/markdown": "3.0",
+        "drupal/markdown_easy": "1.0",
         "drupal/next": "^1.6",
         "drupal/paragraphs": "1.17",
+        "drupal/paragraphs_edit": "3.0",
         "drupal/restui": "^1.21",
+        "drupal/tablefield": "2.4",
         "drush/drush": "^12.4"
     },
     "conflict": {

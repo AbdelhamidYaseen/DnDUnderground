@@ -1,0 +1,17 @@
+uuid: 6acca93a-14f1-44bd-94ea-39155a2af409
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Monster
+type: monster
+description: 'A advisary for adventurers.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

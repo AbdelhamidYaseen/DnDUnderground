@@ -1,0 +1,30 @@
+uuid: 5ac8afa0-09ac-4cf9-b342-7497e338c20e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.legendary_actions.field_legendary_description
+    - field.field.paragraph.legendary_actions.field_legendary_name
+    - paragraphs.paragraphs_type.legendary_actions
+id: paragraph.legendary_actions.default
+targetEntityType: paragraph
+bundle: legendary_actions
+mode: default
+content:
+  field_legendary_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_legendary_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

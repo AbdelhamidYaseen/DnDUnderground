@@ -7,6 +7,8 @@ $highlightColor: #822000;
     margin-top: auto;
     margin-bottom: auto;
     box-shadow: 0 0 5px #979AA4;
+    width: 30vw;
+    height: 30vw;
 }
 .MonsterSheet{
     position: relative;
@@ -175,6 +177,10 @@ $highlightColor: #822000;
         .MonsterImage{
             margin-left: auto;
         }
+        .MonsterImageContainer{
+            margin-top: 3rem;
+        }
+    
     }
 }
 
@@ -184,8 +190,8 @@ $highlightColor: #822000;
         margin-top: 1rem;
     }
     .MonsterImage{
-        width: 45vw;
-        height: 45vw;
+        width: 38vw;
+        height: 38vw;
 
     }
     .MonsterImageContainer{
@@ -200,6 +206,11 @@ $highlightColor: #822000;
 @media only screen and (max-width: 900px) {
     .MonsterSheet{
         width: 90vw;
+    }
+    .MonsterImage{
+        width: 45vw;
+        height: 45vw;
+
     }
     .Attributes{
         display: grid;
