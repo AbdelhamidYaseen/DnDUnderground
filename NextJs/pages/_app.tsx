@@ -176,9 +176,7 @@ const NavigationBar = () =>{
       <nav className={navStyles.Navigation}>
         <ul className={navStyles.NavigationList}>
           {NavLinks.map((e)=>(
-            <>
-              <CustomLink href={e.href} name={e.name} childLinks={e.childLinks}/>
-            </>
+              <CustomLink href={e.href} name={e.name} childLinks={e.childLinks} key={e.name}/>
           ))}
         </ul>
         <div className={navStyles.NavigationMobile}>

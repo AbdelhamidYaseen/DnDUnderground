@@ -6,18 +6,9 @@ import { absoluteUrl, formatDate } from "lib/utils"
 import monsterStyles from "/styles/monsters.css/monsterstable.module.scss";
 import Link from "next/link";
 import exp from "constants";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
-interface MonsterTableData {
-    data:{
-        cr: number,
-        name: string,
-        type: string,
-        size: string,
-        alignment: string, // Corrected the spelling of "alignment"
-        path:string
-    }
-}
+import base from "/styles/layout.css/layout.module.scss";
 
 interface MonsterRowData {
     
@@ -52,15 +43,12 @@ const MonsterRow = (props: MonsterRowData) => {
     )
 }
 
-export const MonsterTable = (props: { data: MonsterTableData[] }) => {
+export const MonsterTable = ({data, useStates, filters}) => {
     const [searchOpen, setSearchOpen] = useState(true);
     const [sort, setSort] = useState("cr");
-    const [filterName, setFilterName] = useState<string>("");
-    const [filtercr, setFilterCr] = useState<string>("");
-    const [filterTags, setFilterTags] = useState<string>("");
-    const [filterSizes, setFilterSizes] = useState<string>("");
+    
 
-    props.data.sort((val1, val2) => {
+    data.sort((val1, val2) => {
         if (sort === "cr") {
         return val1.data.cr - val2.data.cr;
         }
@@ -70,28 +58,28 @@ export const MonsterTable = (props: { data: MonsterTableData[] }) => {
     });
     
     const uniqueValues = Array.from(new Set([
-        ...props.data.map(node => node.data.type),
+        ...filters.types.map(node => node),
     ]));
     const uniqueSizes = Array.from(new Set([
-        ...props.data.map(node => node.data.size),
+        ...filters.sizes.map(node => node),
     ]));
 
     return (
         <div className={monsterStyles.Container}>
             <div className={`${monsterStyles.Search} ${searchOpen ? monsterStyles.Search : monsterStyles.SmallerSearch}`}>
-
+            <div className={monsterStyles.InnerSearch}>
             <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>
                 <label htmlFor="">Monster Name</label>
-                <input type="search" className={monsterStyles.Input} value={filterName} onChange={e=>setFilterName(e.target.value)}/>
+                <input type="search" className={monsterStyles.Input} value={useStates.filterName} onChange={e=>useStates.setFilterName(e.target.value)}/>
             </div>
             <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>
                 <label htmlFor="">Challenge Rating</label>
-                <input type="search"  className={monsterStyles.Input} value={filtercr} onChange={e=>setFilterCr(e.target.value)}/>
+                <input type="search"  className={monsterStyles.Input} value={useStates.filtercr} onChange={e=>useStates.setFilterCr(e.target.value)}/>
             </div>
             <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>
                 <label htmlFor="">Monster Type</label>
-                <select className={monsterStyles.Input}value={filterTags} onChange={e=>setFilterTags(e.target.value)}>
-                <option selected value={""}>-- none --</option>
+                <select className={monsterStyles.Input}value={useStates.filterTags} onChange={e=>useStates.setFilterTags(e.target.value)}>
+                <option defaultValue={""} value={""}>-- none --</option>
                 {
                     uniqueValues.map((e)=>(
                     <option key={e}>{e}</option>
@@ -101,8 +89,8 @@ export const MonsterTable = (props: { data: MonsterTableData[] }) => {
             </div>
             <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>
                 <label htmlFor="">Monster Size</label>
-                <select className={monsterStyles.Input}value={filterSizes} onChange={e=>setFilterSizes(e.target.value)}>
-                <option selected value={""}>-- none --</option>
+                <select className={monsterStyles.Input}value={useStates.filterSizes} onChange={e=>useStates.setFilterSizes(e.target.value)}>
+                <option defaultValue={""} value={""}>-- none --</option>
                 {
                     uniqueSizes.map((e)=>(
                     <option key={e}>{e}</option>
@@ -110,12 +98,21 @@ export const MonsterTable = (props: { data: MonsterTableData[] }) => {
                 }
                 </select>
             </div>
-
-
+            </div>
+            <div className={monsterStyles.Interactor}>
+                <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>
+                        <label htmlFor="">Page Amount: {useStates.limit}</label>
+                        <input type="range" min={5} max={50} className={monsterStyles.Range}value={useStates.limit} onChange={e=>useStates.setLimit(e.target.value)}>
+                        </input>
+            </div>
+            <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>
+            <div  onClick={useStates.handleFilters} className={monsterStyles.SearchButton}>Search</div>
+            </div>
+            </div>
             <div className={`${monsterStyles.CollapseButton} ${searchOpen ? monsterStyles.CollapseButton : monsterStyles.RotatedButton}`} onClick={()=>setSearchOpen(!searchOpen)}>
             ^
             </div>
-    
+
             </div>
             <div className={monsterStyles.TableHead}>
                 <div className={monsterStyles.TableHeadItem}
@@ -131,17 +128,8 @@ export const MonsterTable = (props: { data: MonsterTableData[] }) => {
                 <div className={`${monsterStyles.TableHeadItem} ${monsterStyles.Alignment}`}>ALIGNMENT</div>
             </div>
             {
-            props.data
-            
-            .filter((e)=> {if(e.data.name.toUpperCase().includes(filterName.toUpperCase())){return true}})
 
-            .filter((e)=> {if(e.data.cr.toString() == filtercr || filtercr == ""){return true}})
-
-            .filter((e)=> {if(e.data.type == filterTags || filterTags == ""){return true}})
-
-            .filter((e)=> {if(e.data.size == filterSizes || filterSizes == ""){return true}})
-
-
+            data
             .map((monster, index) => (
                 <MonsterRow
                     key={index}

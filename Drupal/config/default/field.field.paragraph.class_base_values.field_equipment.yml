@@ -1,0 +1,19 @@
+uuid: b5888bb2-dc81-4a79-82b8-71d37a20c263
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_equipment
+    - paragraphs.paragraphs_type.class_base_values
+id: paragraph.class_base_values.field_equipment
+field_name: field_equipment
+entity_type: paragraph
+bundle: class_base_values
+label: equipment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

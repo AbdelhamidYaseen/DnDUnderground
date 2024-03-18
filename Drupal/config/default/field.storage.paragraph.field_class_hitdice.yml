@@ -1,15 +1,15 @@
-uuid: 2e5f4c21-417f-4c4a-b5dc-fc25f7dc1e65
+uuid: 2fa3b716-c8e6-47b2-beab-d61e66c540f3
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_casting_time
-field_name: field_casting_time
-entity_type: node
+    - paragraphs
+id: paragraph.field_class_hitdice
+field_name: field_class_hitdice
+entity_type: paragraph
 type: string
 settings:
-  max_length: 10
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core

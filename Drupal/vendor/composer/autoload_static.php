@@ -79,6 +79,8 @@ class ComposerStaticInit707f7590d632e07d7add8405a30a9cb8
             'Symfony\\Component\\DependencyInjection\\' => 38,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
+            'Shaper\\Tests\\' => 13,
+            'Shaper\\' => 7,
             'SelfUpdate\\' => 11,
         ),
         'R' => 
@@ -119,6 +121,7 @@ class ComposerStaticInit707f7590d632e07d7add8405a30a9cb8
         ),
         'J' => 
         array (
+            'JsonSchema\\' => 11,
             'JsonPath\\' => 9,
         ),
         'G' => 
@@ -322,6 +325,14 @@ class ComposerStaticInit707f7590d632e07d7add8405a30a9cb8
         array (
             0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
         ),
+        'Shaper\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/e0ipso/shaper/tests/src',
+        ),
+        'Shaper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/e0ipso/shaper/src',
+        ),
         'SelfUpdate\\' => 
         array (
             0 => __DIR__ . '/..' . '/consolidation/self-update/src',
@@ -411,6 +422,10 @@ class ComposerStaticInit707f7590d632e07d7add8405a30a9cb8
         'Lcobucci\\Clock\\' => 
         array (
             0 => __DIR__ . '/..' . '/lcobucci/clock/src',
+        ),
+        'JsonSchema\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
         ),
         'JsonPath\\' => 
         array (

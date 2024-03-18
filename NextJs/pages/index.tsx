@@ -19,39 +19,57 @@ export default function IndexPage({nodes}) {
         <title>Home</title>
         <meta
           name="Home"
-          content="the Homepage containing the recent blog posts and an introduction to the owner"
+          content="the Homepage"
         />
       </Head>
       <div className={homeStyles.Container}>
 
-        <div>
-          <div>
-            hero
-          </div>
-          <div>
-            hero text
-          </div>
-        </div>
-
         <div className={homeStyles.HeroCharacters}>
-          characters
+          
         </div>
 
-        <div>
-          wiki
-          <div>item1</div>
-          <div>item2</div>
-          <div>item3</div>
-          <div>item4</div>
-          <div>item5</div>
-          <div>item6</div>
-          [go to wiki page]
-        </div>
-
-        <div>
+        <div className={homeStyles.GuidesDiv}>
           guides
-          [to guides page button]
+
+          <button>[go to guides page]</button>
         </div>
+
+
+        <div className={homeStyles.WikiDiv}>
+          <div style={{display:"flex", height:"100%"}}>
+            <div className={homeStyles.WikiDivItem}>
+                <h3>Artefacts</h3>
+                <p></p>
+                <button>[go to artefacts]</button>
+            </div>
+            <div className={homeStyles.WikiDivItemActive}>
+                <h3>Classes</h3>
+                <p></p>
+                <button>[go to classes]</button>
+            </div>
+            <div className={homeStyles.WikiDivItem}>
+                <h3>Conditions</h3>
+                <p></p>
+                <button>[go to conditions]</button>
+            </div>
+            <div className={homeStyles.WikiDivItem}>
+                <h3>Feats</h3>
+                <p></p>
+                <button>[go to feats]</button>
+            </div>
+            <div className={homeStyles.WikiDivItem}>
+                <h3>Monsters</h3>
+                <p></p>
+                <button>[go to monsters]</button>
+            </div>
+            <div className={homeStyles.WikiDivItem}>
+                <h3>Spells</h3>
+                <p></p>
+                <button>[go to spells]</button>
+            </div>
+          </div>
+        </div>
+
 
       </div>
     </Layout>

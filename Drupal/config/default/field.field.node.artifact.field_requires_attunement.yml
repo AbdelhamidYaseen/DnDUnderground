@@ -1,0 +1,21 @@
+uuid: f61541b1-6b1e-4906-8892-b5533430ea24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_requires_attunement
+    - node.type.artifact
+id: node.artifact.field_requires_attunement
+field_name: field_requires_attunement
+entity_type: node
+bundle: artifact
+label: 'Requires Attunement'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'No Attument'
+  off_label: 'Requires Attument'
+field_type: boolean

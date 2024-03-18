@@ -1,17 +1,16 @@
-uuid: 2e5f4c21-417f-4c4a-b5dc-fc25f7dc1e65
+uuid: 0d88e433-dbae-4ca2-96c1-9c19159dbb89
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_casting_time
-field_name: field_casting_time
+    - taxonomy
+id: node.field_rarity
+field_name: field_rarity
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 10
-  case_sensitive: false
-  is_ascii: false
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

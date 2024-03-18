@@ -1,17 +1,15 @@
-uuid: 2e5f4c21-417f-4c4a-b5dc-fc25f7dc1e65
+uuid: b211dd43-a89a-47b2-836e-104393bd5508
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_casting_time
-field_name: field_casting_time
+id: node.field_description
+field_name: field_description
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 10
   case_sensitive: false
-  is_ascii: false
 module: core
 locked: false
 cardinality: 1

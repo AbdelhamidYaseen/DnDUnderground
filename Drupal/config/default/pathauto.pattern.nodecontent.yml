@@ -9,13 +9,14 @@ label: NodeContent
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  090fdd34-29e6-4a04-9ab1-1bb17d4b8916:
+  b4715b60-ea67-4329-966e-bb5e1c9c91b2:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 090fdd34-29e6-4a04-9ab1-1bb17d4b8916
+    uuid: b4715b60-ea67-4329-966e-bb5e1c9c91b2
     context_mapping:
       node: node
     bundles:
+      artifact: artifact
       class: class
       condition: condition
       monster: monster

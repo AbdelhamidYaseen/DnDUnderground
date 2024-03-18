@@ -1,0 +1,10 @@
+uuid: 74df1720-5a3d-45be-aefe-7921a3079b66
+langcode: en
+status: true
+dependencies: {  }
+id: health
+label: Health
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

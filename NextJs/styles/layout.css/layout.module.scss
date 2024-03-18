@@ -17,3 +17,99 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.PaginationHolder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 1rem;
+}
+.Previous{
+    display: flex;
+    outline: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    width: 35px;
+    line-height: 45px;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    background: #e2b478;
+    color: black;
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    :hover{
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
+    }
+}
+.Current{
+    display: flex;
+    outline: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    width: 35px;
+    line-height: 45px;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    background: #e4a450;
+    color: black;
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    :hover{
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
+    }
+}
+.PaginationPage{
+    display: flex;
+    outline: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    width: 35px;
+    line-height: 45px;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    background: #e4a450;
+    color: black;
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    :hover{
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
+    }
+}
+.Next{
+    display: flex;
+    outline: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    height: 35px;
+    width: 35px;
+    line-height: 45px;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    background: #e2b478;
+    color: black;
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    :hover{
+        background: rgba(255,255,255,0.9);
+        box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
+    }
+}

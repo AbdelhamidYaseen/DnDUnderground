@@ -1,16 +1,18 @@
-uuid: 74864e63-e1d3-4ab6-ade1-8da4f0af1876
+uuid: 9a4132fb-c311-4f38-bd73-dfd704c494b8
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-    - text
-id: paragraph.field_explanation
-field_name: field_explanation
+id: paragraph.field_hp_per_level
+field_name: field_hp_per_level
 entity_type: paragraph
-type: text_long
-settings: {  }
-module: text
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

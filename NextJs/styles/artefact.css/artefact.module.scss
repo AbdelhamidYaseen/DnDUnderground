@@ -1,0 +1,42 @@
+.ArtefactsRow{
+    background-image: url("../../public/images/monsters/row.png"); 
+    background-size: 100% 100%;
+    transition: background-image .1s cubic-bezier(0.17,0.67,0.83,0.67), z-index 0s;
+    height: 6rem;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem;   
+    margin-top: 0.3rem;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.ArtefactsRow:hover{
+    background-image:  cubic-bezier(0.17,0.67,0.83,0.67);    
+    background-image: url("../../public/images/monsters/rowhover.png"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+.ArtefactsRowItem{
+    width: 30%;
+}
+.TableHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem;
+    padding: 0.9rem;   
+    display: flex;
+    font-weight: 700;
+    font-size: 1.4em; 
+    background-image: url("../../public/images/monsters/row.png"); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+.TableHeadItem{
+    width: 30%;   
+ 
+}

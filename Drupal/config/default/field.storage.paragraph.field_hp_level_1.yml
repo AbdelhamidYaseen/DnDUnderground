@@ -1,15 +1,15 @@
-uuid: 2e5f4c21-417f-4c4a-b5dc-fc25f7dc1e65
+uuid: b5ec3f65-2d11-40f3-8c66-6a0586d09143
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_casting_time
-field_name: field_casting_time
-entity_type: node
+    - paragraphs
+id: paragraph.field_hp_level_1
+field_name: field_hp_level_1
+entity_type: paragraph
 type: string
 settings:
-  max_length: 10
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core

@@ -16,13 +16,13 @@
 }
 .Search{
     box-shadow: 0 0 5px #979AA4;
-
+    flex-direction: column;
     background-image: url("../../public/images/monsters/dndmonsterbackground.png");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 20rem;
+    height: 23rem;
     margin-bottom: 1.5rem;
     border-radius: 0px 0px 15px 15px;
     position: relative;
@@ -30,6 +30,67 @@
     padding-bottom: 2rem;
 
 }
+.Range{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    outline: none; /* Remove outline */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    margin-bottom: 0.5rem;
+}
+.Range::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #b78846; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+.Range::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #b78846; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+.Interactor{
+    width: 15rem;
+}
+.InnerSearch{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    display: flex;
+    margin-top: 1rem;
+}
+.SearchButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: rgb(72, 76, 122);
+    font-size: 19px;
+    height: 38px;
+    padding: 8px 24px;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    transition: all .2s ease-out;    
+}
+.SearchButton:hover{
+    box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+}
+
 .SmallerSearch{
     transition: ease-in-out 1s;
     height: 0rem;
@@ -102,9 +163,23 @@
 }
 @media only screen and (max-width: 550px) {
     .Search{
-        height: 70vh;
+        height: 90vh;
     }
+    .TableHead{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
+    .MonsterRow{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .TableHeadItem{
+        font-size: 17px;
+    }
+    .MonsterRowItem{
+        font-size: 15px;
+    }
+}
     
 @media only screen and (max-width: 800px) {
     .TableHeadItem{
@@ -124,11 +199,11 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
     gap: 15px;
 }
 
 .Input{
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
     transition: ease-in-out 1.7s;
     padding: 0.4rem;
     color: black;

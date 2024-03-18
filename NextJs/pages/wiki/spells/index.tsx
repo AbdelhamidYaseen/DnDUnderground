@@ -9,17 +9,20 @@
 
 import { Layout } from "components/layout";
 import { drupal } from "lib/drupal";
-import { GetStaticPropsResult } from "next";
+import { GetServerSidePropsResult, GetStaticPropsResult } from "next";
 import { DrupalNode, DrupalTaxonomyTerm } from "next-drupal";
 import Head from "next/head";
 import base from "/styles/layout.css/layout.module.scss";
 import tableStyles from "/styles/spells.css/spelltable.module.scss";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { DrupalJsonApiParams } from "drupal-jsonapi-params";
 
 //Interface for object received from DRUPAL GET
 interface IndexPageProps {
-  nodes: DrupalNode[];
+  nodes: DrupalNode[],
+  nextpage: any[]
 }
 //Custom Component for 1 row of data
 interface SpellRowProps {
@@ -61,7 +64,28 @@ const SpellRow = (props: SpellRowProps) => {
 };
 
 //Main Page
-export default function IndexPage({ nodes }: IndexPageProps) {
+export default function IndexPage({ nodes,nextpage }: IndexPageProps) {
+  const router = useRouter();
+  const { page } = router.query;
+  const currentPage = parseInt(Array.isArray(page) ? page[0] : page) || 1;
+
+  const handleNextPage = () => {
+    const nextPage = currentPage + 1;
+    router.push({
+      pathname: router.pathname,
+      query: { page: nextPage },
+    });
+  };
+
+  const handlePrevPage = () => {
+    const prevPage = currentPage - 1 > 0 ? currentPage - 1 : 1;
+    router.push({
+      pathname: router.pathname,
+      query: { page: prevPage },
+    });
+  };
+
+
   //UseState for filters & sorts  
   const [sort, setSort] = useState("level");
     
@@ -288,6 +312,28 @@ export default function IndexPage({ nodes }: IndexPageProps) {
                     components={node.field_components}
                     key={node.id} path={node.path.alias}                />
               ))}
+                    <div className={base.PaginationHolder}>
+                      {
+                      currentPage !== 1 ? 
+                      <>
+                          <button onClick={handlePrevPage} disabled={currentPage === 1} className={base.Previous}>
+                          {currentPage - 1 }
+                          </button>
+                      </>
+                      : 
+                      <></>
+                      }
+                        <p className={base.Current}>{currentPage}</p>
+                      
+                      {
+                        nextpage.length !== 0 ?
+                        <>
+                          <button onClick={handleNextPage} className={base.Next}>{currentPage + 1}</button>
+                        </>
+                        :
+                        <></>
+                      }
+                    </div>
 
             </div>
 
@@ -298,26 +344,44 @@ export default function IndexPage({ nodes }: IndexPageProps) {
     );
   }
 
-  export async function getStaticProps(
-    context
-  ): Promise<GetStaticPropsResult<IndexPageProps>> {
+  export async function getServerSideProps(context): Promise<GetServerSidePropsResult<IndexPageProps>> {
+
+    const { query } = context;
+    const page = query.page ? parseInt(Array.isArray(query.page) ? query.page[0] : query.page) : 1;
+    const limit = 10;
+    const offset = (page - 1) * limit;
+
+    const response = await fetch(`http://127.0.0.1:63309/jsonapi/node/spell?page[offset]=${(page) * limit}&page[limit]=${limit}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    const nextpage = data.data;
+
+    const params = new DrupalJsonApiParams()
+    .addFields("node--spell",
+    [
+      "title","body","path","uid","field_level","field_components","field_casting_time","field_duration","field_magic_school","field_ritual","field_concentration","field_magic_casters","alias"
+    ])
+    .addInclude([
+      "field_magic_school","field_components","field_magic_casters"
+    ])
+    .addPageLimit(limit)
+    .addPageOffset(offset)
+    ;
 
     const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
       "node--spell",
       context,
       {
-        params: {
-          "fields[node--spell]":
-            "title,body,path,uid,field_level,field_components,field_casting_time,field_duration,field_magic_school,field_ritual,field_concentration,field_magic_casters,alias",
-          include: "field_magic_school,field_components,field_magic_casters",
-        },
+        params: params.getQueryObject()
       }
     );
     //nodes.map((e)=>(console.log(e.path)))
     return {
       props: {
         nodes,
-        /*terms,*/
+        nextpage
       },
     };
   }
