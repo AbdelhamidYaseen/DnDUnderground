@@ -52,6 +52,10 @@ const NavLinks : CustomLinkProps [] = [
       {
         href:"/wiki/spells",
         name:"Spells",
+      },
+      {
+        href:"/wiki/races",
+        name:"Races"
       }
     ]
   },

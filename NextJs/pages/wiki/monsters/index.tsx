@@ -38,13 +38,7 @@ export default function Page ({nodes, nextpage,totalCount, terms}:IndexPageProps
 
   const router = useRouter();
   const { page } = router.query;
-  const {size} = router.query;
-  const {tag} = router.query;
-  const {cr} = router.query;
-  const {name} = router.query;
   const {amount} = router.query
-
-  console.log(terms.sizes)
 
   /*Functionality Search & Filters*/
   const handleFilters = () => {
@@ -53,7 +47,7 @@ export default function Page ({nodes, nextpage,totalCount, terms}:IndexPageProps
       tag: filterTags,
       cr: filterCr,
       name: filterName,
-      limit: limit
+      amount: limit
     };
     const validFilters = Object.fromEntries(Object.entries(filters).filter(([_, v]) => v));
     router.push({
@@ -61,8 +55,9 @@ export default function Page ({nodes, nextpage,totalCount, terms}:IndexPageProps
       query: validFilters
     });
   }
+      /*Pagination Functionality*/
+
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page) || 1;
-    /*Pagination Functionality*/
     const handleNextPage = () => {
       const nextPage = currentPage + 1;
       const currentQuery = router.query;
@@ -90,7 +85,7 @@ export default function Page ({nodes, nextpage,totalCount, terms}:IndexPageProps
       });
     };
     const handleLastPage = () => {
-      const totalLimit = parseInt(limit); // Adjust this value with your actual limit per page
+      const totalLimit = parseInt(amount as string) || 15; 
       const lastPage = Math.ceil(totalCount / totalLimit);
       const currentQuery = router.query;
       const updatedQuery = { ...currentQuery, page: lastPage };
@@ -189,8 +184,14 @@ export default function Page ({nodes, nextpage,totalCount, terms}:IndexPageProps
 
 
 export async function getServerSideProps (context): Promise<GetServerSidePropsResult<IndexPageProps>> {
+
+  //query
+  const { query } = context;
+  const page = query.page ? parseInt(Array.isArray(query.page) ? query.page[0] : query.page) : 1;
+
+  //filter
     const urlMaker = (size:string,type:string,cr:string,name:string,amount:string)=>{
-      let url = ` http://127.0.0.1:59001/jsonapi/node/monster?page[offset]=${(page) * limit}`
+      let url = `http://127.0.0.1:59001/jsonapi/node/monster?page[offset]=${(page) * limit}`
       if(amount != null){
         url += `&page[limit]=${limit}`
       }
@@ -206,29 +207,28 @@ export async function getServerSideProps (context): Promise<GetServerSidePropsRe
       if(name != null){
         url += `&filter[title]=${name}`
       }
-      console.log(url)
       return url;
     }
-
-    const { query } = context;
-    console.log(query)
     const size : string = query.size;
     const type : string = query.tag;
     const cr : string = query.cr;
     const name: string = query.name;
-    const amount:string = query.limit || 15
-    const page = query.page ? parseInt(Array.isArray(query.page) ? query.page[0] : query.page) : 1;
+    const amount:string = query.amount || 15
+
+  //limit & offset
     const limit = parseInt(amount);
     const offset = (page - 1) * limit;
-    
+  //Secondary response
     const response = await fetch(`${urlMaker(size,type,cr,name,amount)}`);
+  //Check
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
+  //Secondary response necessary data
     const data = await response.json();
     const nextpage = data.data;
     const totalCount = data.meta.count;
-    
+  //Main data fetch & Parameters
     const params = new DrupalJsonApiParams()
     .addFields("node--monster", ["title","body","path","uid","field_monster_base_values"])
     .addInclude(["node_type", "revision_uid", "uid,field_monster_base_values.field_aligment", "field_monster_base_values.field_size", "field_monster_base_values.field_aligment", "field_monster_base_values.field_type"])
@@ -239,7 +239,7 @@ export async function getServerSideProps (context): Promise<GetServerSidePropsRe
     .addPageLimit(limit)
     .addPageOffset(offset)
     ;
-
+  //Collection fetch // creation
     const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
       "node--monster",
       context,
@@ -247,6 +247,7 @@ export async function getServerSideProps (context): Promise<GetServerSidePropsRe
         params: params.getQueryObject()
       }
     );
+  //Taxonomy Items Fetch
     const sizes = await drupal.getResourceCollection<DrupalTaxonomyTerm>(
       "taxonomy_term--size",
     )

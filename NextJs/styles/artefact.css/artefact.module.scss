@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.9rem;   
+    padding: 1.9rem;   
     margin-top: 0.3rem;
     font-size: 1.1em;
     font-weight: 600;
@@ -26,8 +26,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5rem;
-    padding: 0.9rem;   
+    padding: 1.9rem;   
     display: flex;
     font-weight: 700;
     font-size: 1.4em; 
@@ -39,4 +38,29 @@
 .TableHeadItem{
     width: 30%;   
  
+}
+
+
+.MainContainer{
+    background-color: white;
+    border-top: darkblue solid 3px;
+    padding: 2rem;
+    box-shadow: 0 0 5px #979AA4;
+    border-radius:  0px 0px 25px 25px;
+}
+.Header{
+}
+.Title{
+text-align: center;
+}
+.DescriptionContainer{
+    width: 100%;
+}
+.UnderTitle{
+
+}
+.Description{
+    border-top: darkblue solid 3px;
+    margin-top: 1rem;
+    padding-top: 1rem;
 }
