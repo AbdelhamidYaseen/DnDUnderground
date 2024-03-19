@@ -351,7 +351,7 @@ export default function IndexPage({ nodes,nextpage }: IndexPageProps) {
     const limit = 10;
     const offset = (page - 1) * limit;
 
-    const response = await fetch(`http://127.0.0.1:63309/jsonapi/node/spell?page[offset]=${(page) * limit}&page[limit]=${limit}`);
+    const response = await fetch(`http://127.0.0.1:59001/jsonapi/node/spell?page[offset]=${(page) * limit}&page[limit]=${limit}`);
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }

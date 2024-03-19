@@ -190,7 +190,7 @@ export default function Page ({nodes, nextpage,totalCount, terms}:IndexPageProps
 
 export async function getServerSideProps (context): Promise<GetServerSidePropsResult<IndexPageProps>> {
     const urlMaker = (size:string,type:string,cr:string,name:string,amount:string)=>{
-      let url = `http://127.0.0.1:63309/jsonapi/node/monster?page[offset]=${(page) * limit}`
+      let url = ` http://127.0.0.1:59001/jsonapi/node/monster?page[offset]=${(page) * limit}`
       if(amount != null){
         url += `&page[limit]=${limit}`
       }

@@ -115,7 +115,7 @@ export async function getServerSideProps (context): Promise<GetServerSidePropsRe
     const limit = 15;
     const offset = (page - 1) * limit;
 
-    const response = await fetch(`http://127.0.0.1:63309/jsonapi/node/artifact?page[offset]=${(page) * limit}&page[limit]=${limit}`);
+    const response = await fetch(` http://127.0.0.1:59001/jsonapi/node/artifact?page[offset]=${(page) * limit}&page[limit]=${limit}`);
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
