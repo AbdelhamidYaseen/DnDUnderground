@@ -173,6 +173,7 @@ export default function Page ({nodes, nextpage,totalCount, terms}:IndexPageProps
                         <></>
                       }
                     </div>
+                    
                 </div>  
             </div>
             

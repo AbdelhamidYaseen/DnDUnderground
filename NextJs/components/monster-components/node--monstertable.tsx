@@ -102,7 +102,7 @@ export const MonsterTable = ({data, useStates, filters}) => {
             <div className={monsterStyles.Interactor}>
                 <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>
                         <label htmlFor="">Page Amount: {useStates.limit}</label>
-                        <input type="range" min={5} max={50} className={monsterStyles.Range}value={useStates.limit} onChange={e=>useStates.setLimit(e.target.value)}>
+                        <input type="range" step={5} min={5} max={50} className={monsterStyles.Range}value={useStates.limit} onChange={e=>useStates.setLimit(e.target.value)}>
                         </input>
             </div>
             <div className={`${monsterStyles.InputDiv} ${searchOpen ? monsterStyles.InputDiv : monsterStyles.HiddenMenu}`}>

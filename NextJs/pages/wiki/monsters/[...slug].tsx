@@ -14,11 +14,6 @@ interface NodePageProps {
 }
 
 export default function NodePage({ node }: NodePageProps) {
-  //console.log("                                   ___________                                   ")
-  //console.log("-----------------------------------|PRINT OUT|-----------------------------------")
-  //console.log("                                   ¯¯¯¯¯¯¯¯¯¯¯                                   ")
-  //console.log(node.field_monster_base_values.field_drawing)
-  //console.log("-------------------------------------------------------------------------------")
   return (
     <Layout>
       <Head>

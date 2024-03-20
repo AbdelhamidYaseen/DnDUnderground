@@ -1,0 +1,15 @@
+    .MonsterSheet{
+        position: relative;
+        height: fit-content;
+        background-image: url("../../public/images/monsters/dndmonsterbackground.png");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0 0 5px #979AA4;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        width: 50vw;
+        font-family: verdana, geneva, sans-serif;    
+}
