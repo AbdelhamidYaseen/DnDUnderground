@@ -1,8 +1,0 @@
-uuid: 2c4f2b03-dbae-49a2-a561-ab722eea6919
-langcode: en
-status: true
-dependencies: {  }
-name: 'Item Type'
-vid: item_type
-description: ''
-weight: 0

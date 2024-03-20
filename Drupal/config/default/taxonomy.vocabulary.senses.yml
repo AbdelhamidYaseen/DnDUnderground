@@ -1,8 +1,0 @@
-uuid: f09ea470-35e2-4337-9230-35af834e916e
-langcode: en
-status: true
-dependencies: {  }
-name: Senses
-vid: senses
-description: 'Superhuman senses.'
-weight: 0

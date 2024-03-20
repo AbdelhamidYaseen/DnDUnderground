@@ -1,7 +1,0 @@
-DnDfetcher.listing:
-  path: '/dnd-fethcer'
-  defaults: 
-    _controller: '/Drupal/DnDfetcher/Controller/DnDFetcher::view'
-    _title: 'DnDFetcherPage.'
-  requirements:
-    _permission: 'access content'

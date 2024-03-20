@@ -1,8 +1,0 @@
-uuid: 2017ac02-220a-4211-a234-f75f4ff38d33
-langcode: en
-status: true
-dependencies: {  }
-name: Size
-vid: size
-description: 'The size category of creatures.'
-weight: 0

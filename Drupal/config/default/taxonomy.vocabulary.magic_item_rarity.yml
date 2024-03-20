@@ -1,8 +1,0 @@
-uuid: 6f00b627-8e6f-44c1-b014-3e2e5fbcbdb1
-langcode: en
-status: true
-dependencies: {  }
-name: 'Magic Item Rarity'
-vid: magic_item_rarity
-description: ''
-weight: 0

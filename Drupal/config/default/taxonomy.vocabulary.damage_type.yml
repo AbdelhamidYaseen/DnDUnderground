@@ -1,8 +1,0 @@
-uuid: e8837f6f-9b8f-4e60-b4a1-aa53463e7bd1
-langcode: en
-status: true
-dependencies: {  }
-name: 'Damage Type'
-vid: damage_type
-description: ''
-weight: 0

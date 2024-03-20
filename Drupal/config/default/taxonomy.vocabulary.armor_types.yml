@@ -1,8 +1,0 @@
-uuid: 72dfe7e5-01de-4a94-bd79-377261734fbc
-langcode: en
-status: true
-dependencies: {  }
-name: 'Armor Types'
-vid: armor_types
-description: 'The types of armor a person can wear.'
-weight: 0

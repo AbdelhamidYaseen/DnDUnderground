@@ -1,8 +1,0 @@
-uuid: eeeb9309-4e71-4502-b738-855cc007f048
-langcode: en
-status: true
-dependencies: {  }
-name: Attributes
-vid: attributes
-description: 'The main characteristics of a person describing their strenghts and weaknesses'
-weight: 0
