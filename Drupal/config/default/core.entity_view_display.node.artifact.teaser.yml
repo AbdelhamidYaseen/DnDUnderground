@@ -1,0 +1,28 @@
+uuid: 771cd8a5-2820-4a7a-93d8-e350483c6bf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.artifact.field_description
+    - field.field.node.artifact.field_rarity
+    - field.field.node.artifact.field_requires_attunement
+    - field.field.node.artifact.field_type
+    - node.type.artifact
+  module:
+    - user
+id: node.artifact.teaser
+targetEntityType: node
+bundle: artifact
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_description: true
+  field_rarity: true
+  field_requires_attunement: true
+  field_type: true

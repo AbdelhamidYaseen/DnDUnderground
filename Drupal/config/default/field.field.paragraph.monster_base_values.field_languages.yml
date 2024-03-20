@@ -1,0 +1,29 @@
+uuid: 72a18d3a-96b8-4f80-b93d-0f40351e0b09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_languages
+    - paragraphs.paragraphs_type.monster_base_values
+    - taxonomy.vocabulary.language
+id: paragraph.monster_base_values.field_languages
+field_name: field_languages
+entity_type: paragraph
+bundle: monster_base_values
+label: Languages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      language: language
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

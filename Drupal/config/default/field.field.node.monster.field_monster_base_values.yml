@@ -1,0 +1,52 @@
+uuid: 0442474d-be94-4f56-8d1f-6a6ce3e77e5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_monster_base_values
+    - node.type.monster
+    - paragraphs.paragraphs_type.monster_base_values
+  module:
+    - entity_reference_revisions
+id: node.monster.field_monster_base_values
+field_name: field_monster_base_values
+entity_type: node
+bundle: monster
+label: 'Monster Base Values'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      monster_base_values: monster_base_values
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 10
+        enabled: false
+      attribute:
+        weight: 11
+        enabled: false
+      legendary_actions:
+        weight: 12
+        enabled: false
+      monster_base_values:
+        weight: 9
+        enabled: true
+      skills:
+        weight: 13
+        enabled: false
+      special_abilities:
+        weight: 14
+        enabled: false
+      speed:
+        weight: 15
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

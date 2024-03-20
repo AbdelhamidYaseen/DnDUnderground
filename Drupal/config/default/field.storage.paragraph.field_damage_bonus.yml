@@ -1,0 +1,20 @@
+uuid: cc31c0e8-73c3-4f8b-bb3f-48cd988a39bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_damage_bonus
+field_name: field_damage_bonus
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

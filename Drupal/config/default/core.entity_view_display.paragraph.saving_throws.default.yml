@@ -1,0 +1,72 @@
+uuid: 952a52dc-b2cd-41a6-af40-5a89700acb8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.saving_throws.field_charisma_save
+    - field.field.paragraph.saving_throws.field_constitution_save
+    - field.field.paragraph.saving_throws.field_dexterity_save
+    - field.field.paragraph.saving_throws.field_intelligence_save
+    - field.field.paragraph.saving_throws.field_strength_save
+    - field.field.paragraph.saving_throws.field_wisdom_save
+    - paragraphs.paragraphs_type.saving_throws
+id: paragraph.saving_throws.default
+targetEntityType: paragraph
+bundle: saving_throws
+mode: default
+content:
+  field_charisma_save:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_constitution_save:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_dexterity_save:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_intelligence_save:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_strength_save:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_wisdom_save:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

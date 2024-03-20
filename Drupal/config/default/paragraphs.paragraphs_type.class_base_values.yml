@@ -1,0 +1,10 @@
+uuid: a198b62d-040f-479d-ae73-42caad86e1f2
+langcode: en
+status: true
+dependencies: {  }
+id: class_base_values
+label: 'Class Base Values'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

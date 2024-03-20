@@ -1,0 +1,28 @@
+uuid: 736b0c05-f564-4f82-8ef0-1cd0d31ceab3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: nodecontent
+label: NodeContent
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  b4715b60-ea67-4329-966e-bb5e1c9c91b2:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: b4715b60-ea67-4329-966e-bb5e1c9c91b2
+    context_mapping:
+      node: node
+    bundles:
+      artifact: artifact
+      class: class
+      condition: condition
+      monster: monster
+      page: page
+      spell: spell
+      user: user
+selection_logic: and
+weight: -5
+relationships: {  }

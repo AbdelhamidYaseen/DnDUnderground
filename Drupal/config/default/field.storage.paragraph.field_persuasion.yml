@@ -1,0 +1,20 @@
+uuid: 4a6ccd3d-62e5-4b5a-87dd-e674c1cf355d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_persuasion
+field_name: field_persuasion
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: a9d0af73-c3ea-4602-a9c2-6bec4bfa552d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_weapon_proficiencies
+field_name: field_weapon_proficiencies
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

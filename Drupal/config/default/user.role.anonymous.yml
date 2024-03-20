@@ -1,0 +1,20 @@
+uuid: 310c3e91-77de-49e4-84a6-231ff6335f42
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.markdown_conversion
+  module:
+    - filter
+    - media
+    - system
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'use text format markdown_conversion'
+  - 'view media'

@@ -1,0 +1,8 @@
+uuid: 0fd879be-e12e-4590-ac01-744c1deb2074
+langcode: en
+status: true
+dependencies: {  }
+name: 'Monster Type'
+vid: monster_type
+description: ''
+weight: 0

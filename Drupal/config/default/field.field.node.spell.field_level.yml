@@ -1,0 +1,23 @@
+uuid: aa3770a0-db20-43a9-8fcc-ceba15096b8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_level
+    - node.type.spell
+id: node.spell.field_level
+field_name: field_level
+entity_type: node
+bundle: spell
+label: Level
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 9
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,16 @@
+name: My Module
+path: '/hello'
+defaults:
+  _controller: '\Drupal\hello_world\Controller\HelloController'
+  _title: 'Hello World'
+requirements:
+  _permission: 'access content'
+type: module
+
+description: My custom module for Drupal 10.
+
+package: Custom
+
+version: 1.0
+
+core_version_requirement: ^10

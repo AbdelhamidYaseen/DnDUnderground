@@ -1,0 +1,61 @@
+uuid: 7cadf0be-7cb9-4c9b-b900-526433253de1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_movement
+    - paragraphs.paragraphs_type.speed
+    - paragraphs.paragraphs_type.speed_type
+  module:
+    - entity_reference_revisions
+id: paragraph.speed.field_movement
+field_name: field_movement
+entity_type: paragraph
+bundle: speed
+label: Movement
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      speed_type: speed_type
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 12
+        enabled: false
+      attribute:
+        weight: 13
+        enabled: false
+      legendary_actions:
+        weight: 14
+        enabled: false
+      legendary_container:
+        weight: 15
+        enabled: false
+      monster_base_values:
+        weight: 16
+        enabled: false
+      saving_throws:
+        weight: 17
+        enabled: false
+      skills:
+        weight: 18
+        enabled: false
+      special_abilities:
+        weight: 19
+        enabled: false
+      speed:
+        weight: 20
+        enabled: false
+      speed_type:
+        weight: 21
+        enabled: true
+      vulnerabilities_weaknesses_immun:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

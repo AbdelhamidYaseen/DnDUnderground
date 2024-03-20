@@ -1,0 +1,10 @@
+uuid: 462acb7a-80f2-4477-9519-624692e14f5e
+langcode: en
+status: true
+dependencies: {  }
+id: legendary_container
+label: 'Legendary Container'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

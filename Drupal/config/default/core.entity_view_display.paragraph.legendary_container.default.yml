@@ -1,0 +1,32 @@
+uuid: 5bc244b5-254f-4efd-bc21-d06e3bd19428
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.legendary_container.field_legendary_actions
+    - field.field.paragraph.legendary_container.field_legendary_text
+    - paragraphs.paragraphs_type.legendary_container
+  module:
+    - entity_reference_revisions
+id: paragraph.legendary_container.default
+targetEntityType: paragraph
+bundle: legendary_container
+mode: default
+content:
+  field_legendary_actions:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_legendary_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

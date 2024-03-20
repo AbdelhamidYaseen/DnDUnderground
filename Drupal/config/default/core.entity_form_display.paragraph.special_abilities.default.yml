@@ -1,0 +1,32 @@
+uuid: 9211af19-3ee1-4215-b21d-abe736102a8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.special_abilities.field_special_description
+    - field.field.paragraph.special_abilities.field_special_name
+    - paragraphs.paragraphs_type.special_abilities
+id: paragraph.special_abilities.default
+targetEntityType: paragraph
+bundle: special_abilities
+mode: default
+content:
+  field_special_description:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_special_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

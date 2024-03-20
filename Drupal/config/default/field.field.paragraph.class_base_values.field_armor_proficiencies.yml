@@ -1,0 +1,29 @@
+uuid: 02c227d7-4e3e-4e36-b414-5d64de04b9bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_armor_proficiencies
+    - paragraphs.paragraphs_type.class_base_values
+    - taxonomy.vocabulary.armor_types
+id: paragraph.class_base_values.field_armor_proficiencies
+field_name: field_armor_proficiencies
+entity_type: paragraph
+bundle: class_base_values
+label: 'Armor Proficiencies'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      armor_types: armor_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

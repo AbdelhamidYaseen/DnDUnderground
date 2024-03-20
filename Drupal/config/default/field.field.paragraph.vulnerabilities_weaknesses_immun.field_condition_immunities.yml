@@ -1,0 +1,29 @@
+uuid: 4f490032-94a7-490b-90a8-a2dcb9042d15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_condition_immunities
+    - node.type.condition
+    - paragraphs.paragraphs_type.vulnerabilities_weaknesses_immun
+id: paragraph.vulnerabilities_weaknesses_immun.field_condition_immunities
+field_name: field_condition_immunities
+entity_type: paragraph
+bundle: vulnerabilities_weaknesses_immun
+label: 'Condition Immunities'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      condition: condition
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

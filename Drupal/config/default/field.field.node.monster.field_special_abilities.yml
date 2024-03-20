@@ -1,0 +1,52 @@
+uuid: 6bc64af0-3cac-488b-9b3d-95e710153cd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_special_abilities
+    - node.type.monster
+    - paragraphs.paragraphs_type.special_abilities
+  module:
+    - entity_reference_revisions
+id: node.monster.field_special_abilities
+field_name: field_special_abilities
+entity_type: node
+bundle: monster
+label: 'Special Abilities'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      special_abilities: special_abilities
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 10
+        enabled: false
+      attribute:
+        weight: 11
+        enabled: false
+      legendary_actions:
+        weight: 12
+        enabled: false
+      monster_base_values:
+        weight: 9
+        enabled: false
+      skills:
+        weight: 13
+        enabled: false
+      special_abilities:
+        weight: 14
+        enabled: true
+      speed:
+        weight: 15
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

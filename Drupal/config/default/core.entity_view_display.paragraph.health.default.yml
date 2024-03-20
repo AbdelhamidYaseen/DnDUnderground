@@ -1,0 +1,39 @@
+uuid: 087fb5c2-c62c-4d51-94fa-43f903994c85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.health.field_class_hitdice
+    - field.field.paragraph.health.field_hp_level_1
+    - field.field.paragraph.health.field_hp_per_level
+    - paragraphs.paragraphs_type.health
+id: paragraph.health.default
+targetEntityType: paragraph
+bundle: health
+mode: default
+content:
+  field_class_hitdice:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_hp_level_1:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hp_per_level:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

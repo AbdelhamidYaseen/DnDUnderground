@@ -1,0 +1,25 @@
+uuid: 84a1fbfd-d6dc-418f-8e9a-9ce6c0d60a0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_perception
+    - paragraphs.paragraphs_type.skills
+id: paragraph.skills.field_perception
+field_name: field_perception
+entity_type: paragraph
+bundle: skills
+label: Perception
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

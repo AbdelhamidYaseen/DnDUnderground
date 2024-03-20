@@ -1,0 +1,25 @@
+uuid: 4abb2138-c116-427f-84fd-b79d74fafdd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_deception
+    - paragraphs.paragraphs_type.skills
+id: paragraph.skills.field_deception
+field_name: field_deception
+entity_type: paragraph
+bundle: skills
+label: Deception
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

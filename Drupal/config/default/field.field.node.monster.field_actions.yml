@@ -1,0 +1,52 @@
+uuid: f5170ecd-2356-41e3-b116-9eaa99bd177f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_actions
+    - node.type.monster
+    - paragraphs.paragraphs_type.action
+  module:
+    - entity_reference_revisions
+id: node.monster.field_actions
+field_name: field_actions
+entity_type: node
+bundle: monster
+label: Actions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      action: action
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 10
+        enabled: true
+      attribute:
+        weight: 11
+        enabled: false
+      legendary_actions:
+        weight: 12
+        enabled: false
+      monster_base_values:
+        weight: 9
+        enabled: false
+      skills:
+        weight: 13
+        enabled: false
+      special_abilities:
+        weight: 14
+        enabled: false
+      speed:
+        weight: 15
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

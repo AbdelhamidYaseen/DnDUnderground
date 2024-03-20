@@ -1,0 +1,25 @@
+uuid: 51b5a3dc-7f16-4fc6-aa4c-898dbd85ac5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intelligence
+    - paragraphs.paragraphs_type.attribute
+id: paragraph.attribute.field_intelligence
+field_name: field_intelligence
+entity_type: paragraph
+bundle: attribute
+label: Intelligence
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
