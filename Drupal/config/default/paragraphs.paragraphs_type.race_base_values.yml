@@ -1,0 +1,10 @@
+uuid: a3f4dadc-4700-47fd-a3f5-956ef85df7da
+langcode: en
+status: true
+dependencies: {  }
+id: race_base_values
+label: 'Race Base Values'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

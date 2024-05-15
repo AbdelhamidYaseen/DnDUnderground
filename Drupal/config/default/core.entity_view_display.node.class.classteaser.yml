@@ -1,0 +1,27 @@
+uuid: 1315a4fc-4d1a-47eb-96be-5194f14403e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.classteaser
+    - field.field.node.class.body
+    - field.field.node.class.field_base_class_values
+    - field.field.node.class.field_class_table
+    - node.type.class
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.class.classteaser
+targetEntityType: node
+bundle: class
+mode: classteaser
+content: {  }
+hidden:
+  body: true
+  field_base_class_values: true
+  field_class_table: true
+  links: true

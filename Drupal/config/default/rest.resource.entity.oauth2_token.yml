@@ -1,0 +1,23 @@
+uuid: bc021f3f-21f4-48ea-8b85-dcc76a5e0b35
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - simple_oauth
+    - user
+id: entity.oauth2_token
+plugin_id: 'entity:oauth2_token'
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+    - DELETE
+    - PATCH
+  formats:
+    - json
+    - xml
+  authentication:
+    1: oauth2
+    2: cookie

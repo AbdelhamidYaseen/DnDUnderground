@@ -54,7 +54,7 @@ export const Condition = ({items}:ConditionProps) =>{
                             
                             className={conditionstyle.ImageHolder}
                             >
-                                <img src={`https://nextjs.ddev.site/${e.field_condition_image.uri.url}`} alt="" className={conditionstyle.Image}
+                                <img src={`https://nextjs.ddev.site/${e.field_condition_image.uri.url}`} alt="" className={`${conditionstyle.Image} ${currentTitle == e.title ? conditionstyle.Selected : conditionstyle.Image}`}
                                 onClick={()=> handleClick(e.title, e.body.value)}
                                 />
                             </div>

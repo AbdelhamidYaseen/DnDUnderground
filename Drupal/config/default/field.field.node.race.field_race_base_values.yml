@@ -1,0 +1,76 @@
+uuid: 2ced56b1-5fd1-4290-93c2-8e027d87fa00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_race_base_values
+    - node.type.race
+    - paragraphs.paragraphs_type.race_base_values
+  module:
+    - entity_reference_revisions
+id: node.race.field_race_base_values
+field_name: field_race_base_values
+entity_type: node
+bundle: race
+label: 'Race Base Values'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      race_base_values: race_base_values
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 17
+        enabled: false
+      attribute:
+        weight: 18
+        enabled: false
+      class_base_values:
+        weight: 19
+        enabled: false
+      feat_effect:
+        weight: 20
+        enabled: false
+      health:
+        weight: 21
+        enabled: false
+      legendary_actions:
+        weight: 22
+        enabled: false
+      legendary_container:
+        weight: 23
+        enabled: false
+      monster_base_values:
+        weight: 24
+        enabled: false
+      race_ability_score_increase:
+        weight: 25
+        enabled: false
+      race_base_values:
+        weight: 26
+        enabled: true
+      saving_throws:
+        weight: 27
+        enabled: false
+      skills:
+        weight: 28
+        enabled: false
+      special_abilities:
+        weight: 29
+        enabled: false
+      speed:
+        weight: 30
+        enabled: false
+      speed_type:
+        weight: 31
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

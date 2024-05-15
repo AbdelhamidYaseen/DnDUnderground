@@ -78,6 +78,9 @@ const Page = ({nodes,nextpage,totalCount}:IndexPageProps) => {
             }}
           />
         </div>
+
+
+
         <div style={{ marginLeft: "auto", marginRight: "auto", width: "85%" }}>
             {nodes.map((e)=>(
                 <Feat 
@@ -88,6 +91,9 @@ const Page = ({nodes,nextpage,totalCount}:IndexPageProps) => {
                 effect={[...e.field_effects.map((f)=>(f.field_effect))]}/>
             ))}
         </div>
+
+
+
         <div className={base.PaginationHolder}>
                       {
                       currentPage !== 1 ? 
@@ -111,7 +117,7 @@ const Page = ({nodes,nextpage,totalCount}:IndexPageProps) => {
                         :
                         <></>
                       }
-                    </div>
+        </div>
 
       </div>
     </Layout>

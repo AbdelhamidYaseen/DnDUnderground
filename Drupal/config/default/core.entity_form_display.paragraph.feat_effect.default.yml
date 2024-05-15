@@ -1,0 +1,23 @@
+uuid: c7e718c6-b5b0-4459-9795-d37b26eb989e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feat_effect.field_effect
+    - paragraphs.paragraphs_type.feat_effect
+id: paragraph.feat_effect.default
+targetEntityType: paragraph
+bundle: feat_effect
+mode: default
+content:
+  field_effect:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

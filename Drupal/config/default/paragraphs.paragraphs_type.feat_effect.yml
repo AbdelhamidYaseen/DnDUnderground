@@ -1,0 +1,10 @@
+uuid: 3e0034e7-eacc-49e4-94ae-90edf6d2ad96
+langcode: en
+status: true
+dependencies: {  }
+id: feat_effect
+label: 'Feat Effect'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

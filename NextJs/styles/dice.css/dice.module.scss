@@ -17,7 +17,9 @@
     right: 0;
     bottom: 9px;
     transition: ease-in-out 0.5s;
-    background-color: var(--secondary);
+    background-image: url("../../public/images/dice.jpg");
+    background-size: contain;
+    //background-color: var(--secondary);
     border-radius: 50%;
     opacity: 1;
     color: white;
@@ -27,12 +29,17 @@
     }
 }
 .menuToggle::before{
+
 }
 .menuToggle:hover{
     cursor: pointer;
-    background-color: var(--shade);
+    //background-color: var(--shade);
+    opacity: 0.8;
+
 }
+
 .menu{
+    
     user-select: none;
     display: flex;
     justify-content: center;

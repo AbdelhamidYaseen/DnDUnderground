@@ -1,0 +1,11 @@
+uuid: 5640dd36-9bd4-4318-8726-8bce9b26b962
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.classteaser
+label: ClassTeaser
+description: ''
+targetEntityType: node
+cache: true

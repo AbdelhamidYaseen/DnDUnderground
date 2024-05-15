@@ -1,0 +1,14 @@
+uuid: 6ccec67c-022a-4950-9537-527a1eaaf964
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.standard_user
+  module:
+    - user
+id: user_add_role_action.standard_user
+label: 'Add the Standard User role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: standard_user

@@ -1,5 +1,6 @@
 import monsterStyles from "/styles/monsters.css/monsters.module.scss";
 import featStyles from "/styles/feat.css/feat.module.scss";
+import { useState } from "react";
 
 
 
@@ -11,7 +12,6 @@ interface featProps{
 }
 
 export const Feat = ({title,description,prerequisites,effect} : featProps) =>{
-
     return(
         <>
             <div className={featStyles.MonsterSheet}>

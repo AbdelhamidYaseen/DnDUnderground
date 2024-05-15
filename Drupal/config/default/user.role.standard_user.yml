@@ -1,0 +1,19 @@
+uuid: f3ac5bba-cfa8-4c15-b98a-e609c08721b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - simple_oauth
+id: standard_user
+label: 'Standard User'
+weight: 2
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'add simple_oauth entities'
+  - 'administer simple_oauth entities'
+  - 'debug simple_oauth tokens'
+  - 'delete own simple_oauth entities'
+  - 'grant simple_oauth codes'
+  - 'update own simple_oauth entities'
+  - 'view own simple_oauth entities'

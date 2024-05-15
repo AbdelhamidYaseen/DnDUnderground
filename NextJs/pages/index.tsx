@@ -9,70 +9,30 @@ import { Layout } from "components/layout"
 
 import homeStyles from "/styles/home.css/home.module.scss";
 import Image from "next/image";
+import { getSession, signIn, signOut, useSession } from "next-auth/react";
+import { drupal } from "lib/drupal";
+import { DrupalJsonApiParams } from "drupal-jsonapi-params";
+import { CustomSession } from "./api/auth/[...nextauth]";
+import loginStyles from "/styles/login.css/login.module.scss";
 
 
-export default function IndexPage({nodes}) {
-  
-  return (
-    <Layout>
-      <Head>
-        <title>Home</title>
-        <meta
-          name="Home"
-          content="the Homepage"
-        />
-      </Head>
-      <div className={homeStyles.Container}>
+export default function IndexPage() {
 
-        <div className={homeStyles.HeroCharacters}>
-          
-        </div>
-
-        <div className={homeStyles.GuidesDiv}>
-          guides
-
-          <button>[go to guides page]</button>
-        </div>
-
-
-        <div className={homeStyles.WikiDiv}>
-          <div style={{display:"flex", height:"100%"}}>
-            <div className={homeStyles.WikiDivItem}>
-                <h3>Artefacts</h3>
-                <p></p>
-                <button>[go to artefacts]</button>
-            </div>
-            <div className={homeStyles.WikiDivItemActive}>
-                <h3>Classes</h3>
-                <p></p>
-                <button>[go to classes]</button>
-            </div>
-            <div className={homeStyles.WikiDivItem}>
-                <h3>Conditions</h3>
-                <p></p>
-                <button>[go to conditions]</button>
-            </div>
-            <div className={homeStyles.WikiDivItem}>
-                <h3>Feats</h3>
-                <p></p>
-                <button>[go to feats]</button>
-            </div>
-            <div className={homeStyles.WikiDivItem}>
-                <h3>Monsters</h3>
-                <p></p>
-                <button>[go to monsters]</button>
-            </div>
-            <div className={homeStyles.WikiDivItem}>
-                <h3>Spells</h3>
-                <p></p>
-                <button>[go to spells]</button>
-            </div>
+  return(
+    <>
+      <h1>Homepage</h1>
+      <div className={loginStyles.AccountContainer2} >
+        <p>Create custom components for your games</p>
+        <p>Have a custom account with custom saved values</p>
+        <p>Prepare your best game
+        </p>
+        <div className={loginStyles.ButtonContainer}>
+            <a className={loginStyles.LoginButton} href="/wiki">start your journey here</a>
           </div>
-        </div>
-
 
       </div>
-    </Layout>
+    </>
   )
 }
+
 

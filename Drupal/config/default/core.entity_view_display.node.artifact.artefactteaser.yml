@@ -1,0 +1,43 @@
+uuid: 617014ce-af28-4f87-83db-6f6a223f843f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.artefactteaser
+    - field.field.node.artifact.field_description
+    - field.field.node.artifact.field_rarity
+    - field.field.node.artifact.field_requires_attunement
+    - field.field.node.artifact.field_type
+    - node.type.artifact
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.artifact.artefactteaser
+targetEntityType: node
+bundle: artifact
+mode: artefactteaser
+content:
+  field_rarity:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_description: true
+  field_requires_attunement: true
+  links: true

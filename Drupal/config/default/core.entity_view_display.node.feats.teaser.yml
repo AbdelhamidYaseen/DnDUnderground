@@ -1,0 +1,26 @@
+uuid: 3c566ca2-4165-43e1-b536-1e72f6913798
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.feats.body
+    - field.field.node.feats.field_effects
+    - field.field.node.feats.field_prerequisites
+    - node.type.feats
+  module:
+    - user
+id: node.feats.teaser
+targetEntityType: node
+bundle: feats
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_effects: true
+  field_prerequisites: true

@@ -7,6 +7,8 @@ dependencies:
   module:
     - filter
     - media
+    - rest
+    - simple_oauth
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -16,5 +18,14 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'access user profiles'
+  - 'add simple_oauth entities'
+  - 'administer rest resources'
+  - 'administer simple_oauth entities'
+  - 'debug simple_oauth tokens'
+  - 'delete own simple_oauth entities'
+  - 'grant simple_oauth codes'
+  - 'update own simple_oauth entities'
   - 'use text format markdown_conversion'
   - 'view media'
+  - 'view own simple_oauth entities'

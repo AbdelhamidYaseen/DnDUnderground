@@ -1,0 +1,19 @@
+uuid: 2580c8f4-da7a-47b8-a77d-caaa6606e158
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_race_vision
+field_name: field_race_vision
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -29,39 +29,23 @@ targetEntityType: node
 bundle: spell
 mode: spellteaser
 content:
-  field_casting_time:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_components:
     type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_concentration:
     type: boolean
     label: inline
     settings:
-      format: yes-no
+      format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_duration:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   field_level:
     type: number_integer
@@ -72,28 +56,21 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_range:
-    type: string
-    label: inline
+  field_magic_school:
+    type: entity_reference_label
+    label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_ritual:
-    type: boolean
-    label: inline
-    settings:
-      format: yes-no
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
 hidden:
   body: true
+  field_casting_time: true
+  field_duration: true
   field_magic_casters: true
-  field_magic_school: true
   field_material_components: true
+  field_range: true
+  field_ritual: true
   field_upcasting_effect: true
   links: true

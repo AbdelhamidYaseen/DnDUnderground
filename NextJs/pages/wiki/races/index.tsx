@@ -7,6 +7,7 @@ import { GetStaticPropsResult } from "next";
 import { drupal } from "lib/drupal";
 import { ClassCard } from "components/class-components/node-classcard";
 import classStyles from "/styles/class.css/class.module.scss";
+import { RaceCard } from "components/race-components/node--racecard";
 
 //Interface for object received from DRUPAL GET
 interface IndexPageProps {
@@ -16,8 +17,9 @@ interface IndexPageProps {
 
 
 const Page = ({nodes}:IndexPageProps) =>{
+    //nodes.map((e)=>console.log(e.path))
     //console.log(nodes)
-
+    //nodes.map((e)=>(e.field_attributes_increases.map((f)=>(console.log(f.field_attribute.name + ": " + f.field_attribute_increase_amount )))))
     return(
         <Layout>
             <Head>
@@ -34,9 +36,13 @@ const Page = ({nodes}:IndexPageProps) =>{
                 <div className={classStyles.CardContainer}>
                     {nodes.map((e)=>(
 
-                    <>
-                        {e.title}
-                    </>
+                    
+                      <RaceCard key={e.id}
+                      name={e.title} path={e.path.alias} attribute_increases={nodes.map((e)=>(e.field_attributes_increases.map((f)=>({
+                        name:f.field_attribute.name,
+                        amount:f.field_attribute_increase_amount
+                      }))))}/>
+                    
 
                     ))}
                 </div>     
@@ -54,8 +60,8 @@ export async function getStaticProps(
       {
         params: {
           "fields[node--race]":
-            "title,body,path,uid",
-          include: "",
+            "title,body,path,uid,field_attributes_increases",
+          include: "field_attributes_increases.field_attribute,field_attributes_increases.paragraph_type",
         },
       }
     );

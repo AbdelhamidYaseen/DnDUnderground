@@ -1,0 +1,19 @@
+uuid: 334243a2-619f-4b6f-9013-1f6b0d782a8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_traits
+    - paragraphs.paragraphs_type.race_base_values
+id: paragraph.race_base_values.field_traits
+field_name: field_traits
+entity_type: paragraph
+bundle: race_base_values
+label: Traits
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

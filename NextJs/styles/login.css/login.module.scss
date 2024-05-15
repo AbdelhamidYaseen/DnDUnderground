@@ -1,0 +1,167 @@
+.Container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+}
+.AccountContainer{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: var(--shade) solid 3px;
+    box-shadow: 0 0 7px #979AA4;
+    border-radius: 17px;
+    background-color: #f0f0f0;
+
+}
+.AccountContainer2{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 30rem;
+    padding: 1rem;
+    gap: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: var(--shade) solid 3px;
+    box-shadow: 0 0 7px #979AA4;
+    border-radius: 17px;
+    background-color: #f0f0f0;
+   
+}
+.AccountContainer2{
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+}
+.AccountContainer2 p:before{
+    width: 28px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -14px;
+    background-color: #b80000;
+}
+.AccountContainer2 p:after {
+    width: 80%;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    margin-top: 25px;
+margin-left: auto;
+margin-right: auto  ;   
+    background-color: #b80000;
+  }
+.User{
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-bottom: 0.4rem;
+    border-bottom: #822000 solid 2px;
+
+}
+.Form{
+
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+
+}   
+.errorForm{
+    background-color: #fce4e4;
+    border: 1px solid #fcc2c3;
+    float: left;
+    padding: 20px 30px;
+    margin-bottom: 1rem;
+
+    color: #cc0033;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    text-shadow: 1px 1px rgba(250,250,250,.3);
+}
+.Field{
+    width: 100%;
+    border: 2px solid #000;
+    outline: none;
+    background: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-bottom: 0.8rem;
+}
+.Label{
+    color: #B4886B;
+    font-weight: bold;
+    width: 130px;
+    text-transform: capitalize;
+    float: left;
+}
+.FieldUsername{
+
+}
+.FieldPassword{
+
+}
+
+.Value{
+
+}
+.LabelHolder{
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-right: auto;
+}
+.ButtonHolder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+.ButtonContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+.LoginButton{
+    margin-top: auto;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #fff;
+    background-color: var(--shade);
+    height: 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.LoginButton:hover{
+    background-color: var(--tint);
+}

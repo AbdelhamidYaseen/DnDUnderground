@@ -1,6 +1,4 @@
-name: DnDFetcher
-description: Fetches Data From the DnD api and creates nodes  
-package: CustomModules
-
+name: DnDFetcherController
 type: module
-core_version_requirement: ^10
+description: Fetches Data From the DnD api and creates nodes  
+core_version_requirement: ^8 || ^9 || ^10

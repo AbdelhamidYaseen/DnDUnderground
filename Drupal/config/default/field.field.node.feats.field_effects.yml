@@ -1,0 +1,70 @@
+uuid: b2e4dc32-1909-4e03-93f9-2148568eb848
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_effects
+    - node.type.feats
+    - paragraphs.paragraphs_type.feat_effect
+  module:
+    - entity_reference_revisions
+id: node.feats.field_effects
+field_name: field_effects
+entity_type: node
+bundle: feats
+label: Effects
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      feat_effect: feat_effect
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 15
+        enabled: false
+      attribute:
+        weight: 16
+        enabled: false
+      class_base_values:
+        weight: 17
+        enabled: false
+      feat_effect:
+        weight: 18
+        enabled: true
+      health:
+        weight: 19
+        enabled: false
+      legendary_actions:
+        weight: 20
+        enabled: false
+      legendary_container:
+        weight: 21
+        enabled: false
+      monster_base_values:
+        weight: 22
+        enabled: false
+      saving_throws:
+        weight: 23
+        enabled: false
+      skills:
+        weight: 24
+        enabled: false
+      special_abilities:
+        weight: 25
+        enabled: false
+      speed:
+        weight: 26
+        enabled: false
+      speed_type:
+        weight: 27
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

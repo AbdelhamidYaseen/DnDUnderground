@@ -1,0 +1,19 @@
+uuid: affe68e1-3034-4b4d-a354-026872fc621c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_race_aligment
+    - paragraphs.paragraphs_type.race_base_values
+id: paragraph.race_base_values.field_race_aligment
+field_name: field_race_aligment
+entity_type: paragraph
+bundle: race_base_values
+label: Aligment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

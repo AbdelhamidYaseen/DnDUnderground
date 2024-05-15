@@ -1,0 +1,103 @@
+.Title{
+    font-size: 2.1em;
+    font-weight: 400;
+    padding-bottom: 0.4rem;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+
+}
+.SubTitle{
+    display: block;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-bottom: 0.4rem;
+    border-bottom: orange solid 1px;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+    width: 100%;
+
+}
+.CardContainer{
+    display: flex;
+    margin: 0px;
+}
+.CardTitle{
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-bottom: 0.4rem;
+    border-bottom: #822000 solid 2px;
+}
+.Card{
+    width: 12rem;
+    height: 16rem;
+    padding-top: 0.5rem;
+    border: solid black 3px;
+    border-radius: 15px;
+    text-align: center;
+    background-image: url("../../public/images/monsters/dndmonsterbackground.png");
+    background-size: cover;
+    box-shadow: 0 0 5px #979AA4;
+    transition: ease-in-out 1s;
+}
+.Card:hover{
+    -webkit-box-shadow:0px 0px 50px 0px rgba(243, 164, 61, 0.9);
+    -moz-box-shadow: 0px 0px 50px 0px rgba(243, 164, 61, 0.9);
+    box-shadow: 0px 0px 50px 0px rgba(243, 164, 61, 0.9);
+}
+.Attribute{
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+.AttributeAmount{
+}
+.AttributeContainer{
+    height: 5rem;
+    padding-top: 0.5rem;
+}
+
+.ParsedDescription{
+        p{
+            strong{
+                display: block;
+                font-size: 1.5em;
+                font-weight: 400;
+                padding-bottom: 0.4rem;
+                border-bottom: orange solid 1px;
+                margin-top: 1rem;
+                margin-bottom: 0.7rem;
+                width: 100%;
+            }
+            strong::after{
+                white-space: pre;
+                content: "\a";
+            }
+        }
+        h2{
+            display: block;
+            font-size: 1.5em;
+            font-weight: 400;
+            padding-bottom: 0.4rem;
+            border-bottom: orange solid 1px;
+            margin-top: 1rem;
+            margin-bottom: 0.7rem;
+            width: 100%;
+        }
+}
+.ParsedTraits{
+    p{
+        strong{
+            display: block;
+            font-size: 1.1em;
+            font-weight: 550;
+            margin-top: 1rem;
+            margin-bottom: 0.2rem;
+            width: 100%;
+        }
+        strong::after{
+            white-space: pre;
+            content: "\a";
+        }
+}
+}

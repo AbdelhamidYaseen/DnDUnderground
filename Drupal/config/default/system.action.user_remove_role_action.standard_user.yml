@@ -1,0 +1,14 @@
+uuid: c5d6d56b-51dd-4ab6-bacc-4b845f5ec65d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.standard_user
+  module:
+    - user
+id: user_remove_role_action.standard_user
+label: 'Remove the Standard User role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: standard_user

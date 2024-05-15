@@ -1,0 +1,72 @@
+uuid: 1288b959-0658-49dd-be14-ba093fba9fd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.race_base_values.field_age
+    - field.field.paragraph.race_base_values.field_movement_speed
+    - field.field.paragraph.race_base_values.field_race_aligment
+    - field.field.paragraph.race_base_values.field_race_languages
+    - field.field.paragraph.race_base_values.field_race_size
+    - field.field.paragraph.race_base_values.field_race_vision
+    - field.field.paragraph.race_base_values.field_traits
+    - paragraphs.paragraphs_type.race_base_values
+  module:
+    - entity_reference_revisions
+id: paragraph.race_base_values.default
+targetEntityType: paragraph
+bundle: race_base_values
+mode: default
+content:
+  field_age:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_movement_speed:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_race_aligment:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_race_languages:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_race_size:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_race_vision:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_traits:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

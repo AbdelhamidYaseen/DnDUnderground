@@ -1,0 +1,76 @@
+uuid: 7e1fcf34-ef12-4fe8-b716-99e9b83f9dbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_movement_speed
+    - paragraphs.paragraphs_type.race_base_values
+    - paragraphs.paragraphs_type.speed
+  module:
+    - entity_reference_revisions
+id: paragraph.race_base_values.field_movement_speed
+field_name: field_movement_speed
+entity_type: paragraph
+bundle: race_base_values
+label: 'Movement Speed'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      speed: speed
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 17
+        enabled: false
+      attribute:
+        weight: 18
+        enabled: false
+      class_base_values:
+        weight: 19
+        enabled: false
+      feat_effect:
+        weight: 20
+        enabled: false
+      health:
+        weight: 21
+        enabled: false
+      legendary_actions:
+        weight: 22
+        enabled: false
+      legendary_container:
+        weight: 23
+        enabled: false
+      monster_base_values:
+        weight: 24
+        enabled: false
+      race_ability_score_increase:
+        weight: 25
+        enabled: false
+      race_base_values:
+        weight: 26
+        enabled: false
+      saving_throws:
+        weight: 27
+        enabled: false
+      skills:
+        weight: 28
+        enabled: false
+      special_abilities:
+        weight: 29
+        enabled: false
+      speed:
+        weight: 30
+        enabled: true
+      speed_type:
+        weight: 31
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

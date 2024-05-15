@@ -1,0 +1,31 @@
+uuid: d1a6d432-3167-4b4f-8dc2-db23e3ac567c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.race_ability_score_increase.field_attribute
+    - field.field.paragraph.race_ability_score_increase.field_attribute_increase_amount
+    - paragraphs.paragraphs_type.race_ability_score_increase
+id: paragraph.race_ability_score_increase.default
+targetEntityType: paragraph
+bundle: race_ability_score_increase
+mode: default
+content:
+  field_attribute:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_attribute_increase_amount:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

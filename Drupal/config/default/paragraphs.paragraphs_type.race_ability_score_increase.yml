@@ -1,0 +1,10 @@
+uuid: ca8c878f-aa84-4a6d-bfbd-14bc42066c9f
+langcode: en
+status: true
+dependencies: {  }
+id: race_ability_score_increase
+label: 'Race Ability Score Increase'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

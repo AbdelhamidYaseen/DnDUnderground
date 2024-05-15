@@ -1,0 +1,11 @@
+uuid: 8215b03f-6fbb-45bb-9554-8ff59b840508
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.conditionteaser
+label: ConditionTeaser
+description: ''
+targetEntityType: node
+cache: true

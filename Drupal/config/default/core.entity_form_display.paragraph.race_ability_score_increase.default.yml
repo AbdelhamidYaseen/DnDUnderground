@@ -1,0 +1,33 @@
+uuid: ac43dec3-518b-4b03-800a-033ddcc0294a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.race_ability_score_increase.field_attribute
+    - field.field.paragraph.race_ability_score_increase.field_attribute_increase_amount
+    - paragraphs.paragraphs_type.race_ability_score_increase
+id: paragraph.race_ability_score_increase.default
+targetEntityType: paragraph
+bundle: race_ability_score_increase
+mode: default
+content:
+  field_attribute:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_attribute_increase_amount:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

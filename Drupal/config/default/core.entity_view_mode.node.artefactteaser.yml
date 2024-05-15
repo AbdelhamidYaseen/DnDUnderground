@@ -1,0 +1,11 @@
+uuid: 6c2ee9cf-d66f-4d2f-96d0-73731907fe9b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.artefactteaser
+label: ArtefactTeaser
+description: ''
+targetEntityType: node
+cache: true

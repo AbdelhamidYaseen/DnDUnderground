@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.condition.body
+    - field.field.node.condition.field_condition_image
+    - image.style.thumbnail
     - node.type.condition
   module:
+    - image
     - path
     - text
 id: node.condition.default
@@ -28,6 +31,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_condition_image:
+    type: image_image
+    weight: 123
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   path:
     type: path

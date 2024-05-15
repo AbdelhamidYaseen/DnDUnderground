@@ -15,6 +15,7 @@ import navStyles from "/styles/layout.css/nav.module.scss";
 import headerStyles from "/styles/layout.css/header.module.scss";
 import footerStyles from "/styles/layout.css/footer.module.scss";
 import layout from "/styles/layout.css/layout.module.scss";
+import { SessionProvider } from "next-auth/react"
 
 import Image from 'next/image';
 import { useState } from 'react';
@@ -24,8 +25,6 @@ import { useState } from 'react';
 
 //Amount of links in Nav
 const NavLinks : CustomLinkProps [] = [
-  {href:"/characters",name:"Characters"},
-  {href:"/beginners-guide",name:"Beginners Guide"},
   {href:"/wiki",name:"Wiki",childLinks:
     [
       {
@@ -59,21 +58,7 @@ const NavLinks : CustomLinkProps [] = [
       }
     ]
   },
-  {href:"/user",name:"User",childLinks:
-    [
-      {
-        href: '/login',
-        name: 'Login'
-      },
-      {
-        href:'/logout',
-        name:'Logout'
-      },
-      {
-        href:'/register',
-        name:'Register'
-      },
-    ]
+  {href:"/account",name:"Account"
   },
 ];
 //Custom Components
@@ -193,18 +178,12 @@ const NavigationBar = () =>{
             <ul className={navStyles.NavigationListMobile}>
             {
             NavLinks.map((e)=>(
-              <>
-                <CustomLinkMobile href={e.href} name={e.name} childLinks={e.childLinks}/>
-              </>
+              
+                <CustomLinkMobile href={e.href} name={e.name} childLinks={e.childLinks} key={e.name}/>
+              
             ))
             }
 
-            <div className={navStyles.SearchHolder}>
-              <form className={navStyles.Search}> 
-              <input type="search" className={navStyles.SearchContent} />
-              <button type="submit" className={navStyles.SearchButton}><FiSearch /></button>
-              </form>
-            </div>
           </ul>
             :
             <></>
@@ -221,10 +200,6 @@ const HeaderBar = () =>{
         <Link href="/" className={headerStyles.Logo}>
         <img src="/assets/images/logo.png"style={{width:75, height:75, borderRadius:25}} alt=""/>
       </Link>
-      <form className={headerStyles.Search}> 
-          <input type="search" className={headerStyles.SearchContent} />
-          <button type="submit" className={headerStyles.SearchButton}><FiSearch /></button>
-      </form>
       <NavigationBar/>
     </header>
   )
@@ -232,23 +207,19 @@ const HeaderBar = () =>{
 const FooterBar = () =>{
   return(
       <footer className={footerStyles.Footer}>
-       <div>
-          Expanded Logo
-       </div>
-       <div>
-          Quick Links
-       </div>
       </footer>
   )
 }
 
 //Root of project && this will render on every page
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps:{session, ...pageProps}}: AppProps) {
   return (
     <div className={layout.__next}>
-      <HeaderBar/>
-      <Component {...pageProps} />
-      <FooterBar/>
+       <SessionProvider session={session}>
+        <HeaderBar/>
+        <Component {...pageProps} />
+        <FooterBar/>
+      </SessionProvider>
     </div>
   )
 }

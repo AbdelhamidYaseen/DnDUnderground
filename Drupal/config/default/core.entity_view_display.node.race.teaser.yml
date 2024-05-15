@@ -1,0 +1,34 @@
+uuid: f55af99a-a1b8-40d1-b357-6d3a4086ebb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.race.body
+    - field.field.node.race.field_attributes_increases
+    - field.field.node.race.field_race_base_values
+    - node.type.race
+  module:
+    - text
+    - user
+id: node.race.teaser
+targetEntityType: node
+bundle: race
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_attributes_increases: true
+  field_race_base_values: true

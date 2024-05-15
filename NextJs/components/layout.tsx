@@ -4,7 +4,9 @@ import { drupal } from "lib/drupal"
 
 import diceStyles from "/styles/dice.css/dice.module.scss";
 import { useState } from "react";
-
+export interface LayoutProps {
+  children?: React.ReactNode
+}
 
 export function Layout({ children}) {
   const [Visibilty, setVisibility] = useState<boolean>(false);

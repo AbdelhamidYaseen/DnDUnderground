@@ -1,0 +1,11 @@
+uuid: 849b595e-a46b-4811-b262-fce110d64f63
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featsteaser
+label: FeatsTeaser
+description: ''
+targetEntityType: node
+cache: true

@@ -1,7 +1,8 @@
-DnDfetcher.listing:
-  path: '/dnd-fethcer'
+# modules/custom/DnDfetcher/DnDFetcherController.routing.yml
+DnDfetcher.content:
+  path: '/dnd-fetcher'
   defaults: 
-    _controller: '/Drupal/DnDfetcher/Controller/DnDFetcher::view'
+    _controller: '\Drupal\DnDfetcher\Controller\DnDFetcherController::content'
     _title: 'DnDFetcherPage.'
   requirements:
     _permission: 'access content'

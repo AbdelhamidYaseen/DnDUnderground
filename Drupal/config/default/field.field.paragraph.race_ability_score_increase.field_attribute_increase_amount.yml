@@ -1,0 +1,25 @@
+uuid: 748656c9-bc47-47ad-88bd-5c82c70a2599
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_attribute_increase_amount
+    - paragraphs.paragraphs_type.race_ability_score_increase
+id: paragraph.race_ability_score_increase.field_attribute_increase_amount
+field_name: field_attribute_increase_amount
+entity_type: paragraph
+bundle: race_ability_score_increase
+label: 'Attribute Increase Amount'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

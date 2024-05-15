@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Condition
 type: condition
-description: ''
+description: 'A condition / disability a character can be inflicted with'
 help: ''
 new_revision: true
 preview_mode: 1

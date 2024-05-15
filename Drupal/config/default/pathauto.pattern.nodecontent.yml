@@ -9,18 +9,20 @@ label: NodeContent
 type: 'canonical_entities:node'
 pattern: '[node:title]'
 selection_criteria:
-  b4715b60-ea67-4329-966e-bb5e1c9c91b2:
+  46629d26-38f9-4aa4-bab3-d3eef45ea573:
     id: 'entity_bundle:node'
     negate: false
-    uuid: b4715b60-ea67-4329-966e-bb5e1c9c91b2
+    uuid: 46629d26-38f9-4aa4-bab3-d3eef45ea573
     context_mapping:
       node: node
     bundles:
       artifact: artifact
       class: class
       condition: condition
+      feats: feats
       monster: monster
       page: page
+      race: race
       spell: spell
       user: user
 selection_logic: and

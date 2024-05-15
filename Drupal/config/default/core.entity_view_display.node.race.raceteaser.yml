@@ -1,0 +1,31 @@
+uuid: 17bf759d-9105-4096-ba05-67107f4cda2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.raceteaser
+    - field.field.node.race.body
+    - field.field.node.race.field_attributes_increases
+    - field.field.node.race.field_race_base_values
+    - node.type.race
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.race.raceteaser
+targetEntityType: node
+bundle: race
+mode: raceteaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_attributes_increases: true
+  field_race_base_values: true

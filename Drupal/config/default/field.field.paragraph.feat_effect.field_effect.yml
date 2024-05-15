@@ -1,0 +1,19 @@
+uuid: 79f82c06-9630-4d3a-a328-ac4b1e7f88ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_effect
+    - paragraphs.paragraphs_type.feat_effect
+id: paragraph.feat_effect.field_effect
+field_name: field_effect
+entity_type: paragraph
+bundle: feat_effect
+label: Effect
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 65b230b4-d7e8-4172-9502-d43c21bab57b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feat_effect.field_effect
+    - paragraphs.paragraphs_type.feat_effect
+id: paragraph.feat_effect.default
+targetEntityType: paragraph
+bundle: feat_effect
+mode: default
+content:
+  field_effect:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Class
 type: class
-description: ''
+description: 'Characters are classified into classes, special vocations that they can adopt.'
 help: ''
 new_revision: true
 preview_mode: 1

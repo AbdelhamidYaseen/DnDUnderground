@@ -1,0 +1,73 @@
+uuid: f38370e0-f885-4319-ab85-fc66c3250659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attributes_increases
+    - node.type.race
+    - paragraphs.paragraphs_type.race_ability_score_increase
+  module:
+    - entity_reference_revisions
+id: node.race.field_attributes_increases
+field_name: field_attributes_increases
+entity_type: node
+bundle: race
+label: 'Attributes Increases'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      race_ability_score_increase: race_ability_score_increase
+    negate: 0
+    target_bundles_drag_drop:
+      action:
+        weight: 16
+        enabled: false
+      attribute:
+        weight: 17
+        enabled: false
+      class_base_values:
+        weight: 18
+        enabled: false
+      feat_effect:
+        weight: 19
+        enabled: false
+      health:
+        weight: 20
+        enabled: false
+      legendary_actions:
+        weight: 21
+        enabled: false
+      legendary_container:
+        weight: 22
+        enabled: false
+      monster_base_values:
+        weight: 23
+        enabled: false
+      race_ability_score_increase:
+        weight: 24
+        enabled: true
+      saving_throws:
+        weight: 25
+        enabled: false
+      skills:
+        weight: 26
+        enabled: false
+      special_abilities:
+        weight: 27
+        enabled: false
+      speed:
+        weight: 28
+        enabled: false
+      speed_type:
+        weight: 29
+        enabled: false
+      vulnerabilities_weaknesses_immun:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

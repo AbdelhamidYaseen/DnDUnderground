@@ -1,0 +1,47 @@
+uuid: 604cc2d2-69da-4cd8-a70b-e8c6478e9a69
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.conditionteaser
+    - field.field.node.condition.body
+    - field.field.node.condition.field_condition_image
+    - node.type.condition
+  module:
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.condition.conditionteaser
+targetEntityType: node
+bundle: condition
+mode: conditionteaser
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_condition_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

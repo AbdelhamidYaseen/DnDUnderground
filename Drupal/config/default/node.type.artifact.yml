@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Artifact
 type: artifact
-description: ''
+description: 'A magical item that contains special characteristics.'
 help: ''
 new_revision: true
 preview_mode: 1

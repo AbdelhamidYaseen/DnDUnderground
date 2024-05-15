@@ -1,0 +1,19 @@
+uuid: 8fbf70c4-119a-4ffa-9961-96f8227e3046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_prerequisites
+    - node.type.feats
+id: node.feats.field_prerequisites
+field_name: field_prerequisites
+entity_type: node
+bundle: feats
+label: Prerequisites
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

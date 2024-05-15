@@ -1,0 +1,48 @@
+uuid: 37c19d4b-c41b-491c-b2d5-15ce00bb0f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.feats.body
+    - field.field.node.feats.field_effects
+    - field.field.node.feats.field_prerequisites
+    - node.type.feats
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.feats.default
+targetEntityType: node
+bundle: feats
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_effects:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_prerequisites:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

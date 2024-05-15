@@ -1,0 +1,31 @@
+uuid: 7c588f5f-577d-417c-96f5-21a1c6cd62cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featsteaser
+    - field.field.node.feats.body
+    - field.field.node.feats.field_effects
+    - field.field.node.feats.field_prerequisites
+    - node.type.feats
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.feats.featsteaser
+targetEntityType: node
+bundle: feats
+mode: featsteaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_effects: true
+  field_prerequisites: true
