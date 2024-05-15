@@ -1,4 +1,12 @@
 
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  }
+  @font-palette-values --Purples {
+    font-family: Rocher;
+    base-palette: 6;
+  }
 .Hero{
 
 }
@@ -7,6 +15,7 @@
     height: 40rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
+    
 }
 .HeroCharacters{
     //background-image: url("../../public/images/basecharacter.png");
